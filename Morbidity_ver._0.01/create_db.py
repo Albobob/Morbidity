@@ -75,9 +75,9 @@ territorial_units = [
     ("Смоленская область", "Smolensk Region", 1, 6),
     ("Тамбовская область", "Tambov Region", 1, 6),
     ("Тверская область", "Tver Region", 1, 6),
-    ('Тверская область', "Tula Region", 1, 6),
-    ("Ярославска область", "Yaroslavl Region", 1, 6),
-    ("Москва", "Moscow", 1, 8),
+    ('Тульская область', "Tula Region", 1, 6),
+    ("Ярославская область", "Yaroslavl Region", 1, 6),
+    ("г. Москва", "Moscow", 1, 8),
 
     ('Республика Карелия', 'Republic of Karelia', 2, 3),
     ('Республика Коми', 'Kodi Republic', 2, 3),
@@ -89,7 +89,7 @@ territorial_units = [
     ('Мурманская область', 'Murmansk Region', 2, 6),
     ('Новгородская область', 'Novgorod Region', 2, 6),
     ('Псковская область', 'Pskov Region', 2, 6),
-    ('Санкт-Петербург', 'St Petersburg', 2, 8),
+    ('г.Санкт-Петербург', 'St Petersburg', 2, 8),
 
     ('Республика Адыгея', 'Republic of Adygea', 3, 3),
     ('Республика Калмыкия', 'Republic of Kalmykia', 3, 3),
@@ -98,7 +98,7 @@ territorial_units = [
     ('Астраханская область', 'Astrakhan Region', 3, 6),
     ('Волгоградская область', 'Volgograd Region', 3, 6),
     ('Ростовская область', 'Rostov Region', 3, 6),
-    ('Севастополь', 'City of Sevastopol', 3, 8),
+    ('г.Севастополь', 'City of Sevastopol', 3, 8),
 
     ('Республика Дагестан', 'Republic of Dagestan', 4, 3),
     ('Республика Ингушетия', 'Republic of Ingushetia', 4, 3),
@@ -180,20 +180,6 @@ session.add(TypeValue('Абсолютное значение', None))
 session.add(TypeValue('Показатель на 100 тыс. населения', None))
 
 
-wb = load_workbook(filename='tmp.xlsx')
-
-
-def decode(work_book, sheet, coll, rows):
-    """ Функция для чтения из EXEL. На вход подается:
-        work_book = файл EXEL,
-        sheet = страница,
-        коардинаты ячейки(колонка и строчка)
-        coll = колонка,
-        rows = строчка
-    """
-    sheet = work_book[f'{sheet}']
-    value_cell = sheet[f'{coll}{rows}'].value
-    return value_cell
 
 
 

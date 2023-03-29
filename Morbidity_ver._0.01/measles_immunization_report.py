@@ -1,4 +1,5 @@
 import datetime
+import string
 import config
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -23,14 +24,15 @@ total_id = total.id
 children = session.query(PopulationGroup).filter_by(name='00-17').first()
 children_id = children.id
 # Взрослые
-# adult = session.query(PopulationGroup).filter_by(name='18+')
-# adult_id = adult.id
+adult = session.query(PopulationGroup).filter_by(name='18+').first()
+adult_id = adult.id
 # Мигранты
-# migrants = session.query(PopulationGroup).filter_by(name='мигранты')
-# migrants_id = migrants.id
+migrants = session.query(PopulationGroup).filter_by(name='мигранты').first()
+migrants_id = migrants.id
 
 # Открываем XL
-wb = load_workbook(filename='tmp.xlsx')
+wb = load_workbook(filename='TemplateMeasles.xlsx', data_only=True)
+abc = list(string.ascii_lowercase)
 
 
 def decode(work_book, sheet, coll, rows):
@@ -46,31 +48,58 @@ def decode(work_book, sheet, coll, rows):
     return value_cell
 
 
-def insert(rg_id):
+def insert(rg_id, rows):
     date = datetime.date(2023, 3, 29)
 
-    total_vac_measles = decode(wb, 'tmp', 'B', 12)
-    total_unvac = decode(wb, 'tmp', 'E', 12)
-    total_vac_subjects = decode(wb, 'tmp', 'I', 12)
+    total_vac_measles = decode(wb, 'tmp', abc[2], rows)
+    total_unvac = decode(wb, 'tmp', abc[5], rows)
+    total_vac_subjects = decode(wb, 'tmp', abc[9], rows)
     session.add(VaccinatedMeasles(rg_id, date, total_id, total_vac_measles, total_unvac, total_vac_subjects))
 
-    children_vac_measles = decode(wb, 'tmp', 'C', 12)
-    children_unvac = decode(wb, 'tmp', 'F', 12)
-    children_vac_subjects = decode(wb, 'tmp', 'J', 12)
-    session.add(VaccinatedMeasles(rg_id, date, 6, children_vac_measles, children_unvac, children_vac_subjects))
+    children_vac_measles = decode(wb, 'tmp', abc[3], rows)
+    children_unvac = decode(wb, 'tmp', abc[6], rows)
+    children_vac_subjects = decode(wb, 'tmp', abc[10], rows)
+    session.add(
+        VaccinatedMeasles(rg_id, date, children_id, children_vac_measles, children_unvac, children_vac_subjects))
 
-    adult_vac_measles = decode(wb, 'tmp', 'D', 12)
-    adult_unvac = decode(wb, 'tmp', 'G', 12)
-    adult_vac_subjects = decode(wb, 'tmp', 'K', 12)
-    session.add(VaccinatedMeasles(rg_id, date, 7, adult_vac_measles, adult_unvac, adult_vac_subjects))
+    adult_vac_measles = decode(wb, 'tmp', abc[4], rows)
+    adult_unvac = decode(wb, 'tmp', abc[7], rows)
+    adult_vac_subjects = decode(wb, 'tmp', abc[11], rows)
+    session.add(VaccinatedMeasles(rg_id, date, adult_id, adult_vac_measles, adult_unvac, adult_vac_subjects))
 
     migrants_vac_measles = None
-    migrants_unvac = decode(wb, 'tmp', 'H', 12)
-    migrants_vac_subjects = decode(wb, 'tmp', 'L', 12)
-    session.add(VaccinatedMeasles(rg_id, date, 8, migrants_vac_measles, migrants_unvac, migrants_vac_subjects))
+    migrants_unvac = decode(wb, 'tmp', abc[8], rows)
+    migrants_vac_subjects = decode(wb, 'tmp', abc[12], rows)
+    session.add(
+        VaccinatedMeasles(rg_id, date, migrants_id, migrants_vac_measles, migrants_unvac, migrants_vac_subjects))
 
 
-insert(1)
+for row in range(9, 101):
+    region_name = decode(wb, 'tmp', 'B', row)
+    try:
+        region = session.query(TerritorialUnit).filter_by(name_ru=f'{region_name}').first()
+        rg_id = region.id
+        print(rg_id)
+        print(region_name)
+        insert(rg_id, row)
+    except AttributeError:
+        if region_name == 'Кемеровская область - Кузбасс':
+            region_name = 'Кемеровская область'
+
+        if region_name == 'Ханты-Мансийский автономный округ-Югра':
+            region_name = 'Ханты-Мансийский автономный округ — Югра'
+
+        if region_name == 'Чувашская Республика – Чувашия':
+            region_name = 'Чувашская Республика'
+
+        if region_name == 'Республика Татарстан (Татарстан)':
+            region_name = 'Республика Татарстан'
+
+        if region_name == 'Республика Северная Осетия-Алания':
+            region_name = 'Республика Северная Осетия — Алания'
+
+        if region_name == 'Республика Адыгея (Адыгея)':
+            region_name = 'Республика Адыгея'
 
 session.commit()
 session.close()
