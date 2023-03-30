@@ -180,8 +180,5 @@ session.add(TypeValue('Абсолютное значение', None))
 session.add(TypeValue('Показатель на 100 тыс. населения', None))
 
 
-
-
-
 session.commit()
 session.close()

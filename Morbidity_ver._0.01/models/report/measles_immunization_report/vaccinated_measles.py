@@ -11,9 +11,9 @@ class VaccinatedMeasles(Base):
     __tablename__ = 'vaccinated_measles'
     id = Column(Integer, primary_key=True)
     date = Column(DateTime, default=datetime.utcnow)
-    vac_measles = Column(Integer, nullable=True)  # Число привитых людей
-    unvac_population_measles = Column(Integer, nullable=False)  # Невакцинорованные
-    vac_subjects_measles = Column(Integer, nullable=False)  # Число подлежащих вакцинации
+    vac_measles = Column(Integer)  # Число привитых людей
+    unvac_population_measles = Column(Integer)  # Невакцинорованные
+    vac_subjects_measles = Column(Integer)  # Число подлежащих вакцинации
 
     # Название региона
     rg_id = Column(Integer, ForeignKey('territorial_unit.id'), nullable=False)

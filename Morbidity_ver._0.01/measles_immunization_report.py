@@ -51,25 +51,25 @@ def decode(work_book, sheet, coll, rows):
 def insert(rg_id, rows):
     date = datetime.date(2023, 3, 29)
 
-    total_vac_measles = decode(wb, 'tmp', abc[2], rows)
-    total_unvac = decode(wb, 'tmp', abc[5], rows)
-    total_vac_subjects = decode(wb, 'tmp', abc[9], rows)
+    total_unvac = decode(wb, 'tmp', abc[2], rows)
+    total_vac_subjects = decode(wb, 'tmp', abc[5], rows)
+    total_vac_measles = decode(wb, 'tmp', abc[9], rows)
     session.add(VaccinatedMeasles(rg_id, date, total_id, total_vac_measles, total_unvac, total_vac_subjects))
 
-    children_vac_measles = decode(wb, 'tmp', abc[3], rows)
-    children_unvac = decode(wb, 'tmp', abc[6], rows)
-    children_vac_subjects = decode(wb, 'tmp', abc[10], rows)
+    children_unvac = decode(wb, 'tmp', abc[3], rows)
+    children_vac_subjects = decode(wb, 'tmp', abc[6], rows)
+    children_vac_measles = decode(wb, 'tmp', abc[10], rows)
     session.add(
         VaccinatedMeasles(rg_id, date, children_id, children_vac_measles, children_unvac, children_vac_subjects))
 
-    adult_vac_measles = decode(wb, 'tmp', abc[4], rows)
-    adult_unvac = decode(wb, 'tmp', abc[7], rows)
-    adult_vac_subjects = decode(wb, 'tmp', abc[11], rows)
+    adult_unvac = decode(wb, 'tmp', abc[4], rows)
+    adult_vac_subjects = decode(wb, 'tmp', abc[7], rows)
+    adult_vac_measles = decode(wb, 'tmp', abc[11], rows)
     session.add(VaccinatedMeasles(rg_id, date, adult_id, adult_vac_measles, adult_unvac, adult_vac_subjects))
 
-    migrants_vac_measles = None
-    migrants_unvac = decode(wb, 'tmp', abc[8], rows)
-    migrants_vac_subjects = decode(wb, 'tmp', abc[12], rows)
+    migrants_unvac = None
+    migrants_vac_subjects = decode(wb, 'tmp', abc[8], rows)
+    migrants_vac_measles = decode(wb, 'tmp', abc[12], rows)
     session.add(
         VaccinatedMeasles(rg_id, date, migrants_id, migrants_vac_measles, migrants_unvac, migrants_vac_subjects))
 
@@ -79,8 +79,6 @@ for row in range(9, 101):
     try:
         region = session.query(TerritorialUnit).filter_by(name_ru=f'{region_name}').first()
         rg_id = region.id
-        print(rg_id)
-        print(region_name)
         insert(rg_id, row)
     except AttributeError:
         if region_name == 'Кемеровская область - Кузбасс':
