@@ -12,6 +12,10 @@ from models.geo_category import GeoCategory
 
 from models.report.measles_immunization_report.vaccinated_measles import VaccinatedMeasles
 
+date = datetime.datetime.now()
+# получаем номер недели в году
+week_number = date.strftime('%U')
+
 # Подключаемся к БД
 engine = create_engine(f"{config.SQL_PATH}", echo=False)
 Session = sessionmaker(bind=engine)
@@ -29,9 +33,12 @@ adult_id = adult.id
 # Мигранты
 migrants = session.query(PopulationGroup).filter_by(name='мигранты').first()
 migrants_id = migrants.id
+# Пребывающие из новых территорий РФ
+new_citizens = session.query(PopulationGroup).filter_by(name='переселенцы').first()
+new_citizens_id = new_citizens.id
 
 # Открываем XL
-wb = load_workbook(filename='TemplateMeasles.xlsx', data_only=True)
+wb = load_workbook(filename='52.xlsx', data_only=True)
 abc = list(string.ascii_lowercase)
 
 
@@ -48,56 +55,109 @@ def decode(work_book, sheet, coll, rows):
     return value_cell
 
 
-def insert(rg_id, rows):
-    date = datetime.date(2023, 3, 29)
+# TODO Добавить описание
+def true_region_name(name: str) -> str:
+    true_name = None
+    if name == 'Москва':
+        true_name = 'г. Москва'
+        return true_name
 
-    total_unvac = decode(wb, 'tmp', abc[2], rows)
-    total_vac_subjects = decode(wb, 'tmp', abc[5], rows)
-    total_vac_measles = decode(wb, 'tmp', abc[9], rows)
-    session.add(VaccinatedMeasles(rg_id, date, total_id, total_vac_measles, total_unvac, total_vac_subjects))
+    if name == 'Санкт-Петербург':
+        true_name = 'г.Санкт-Петербург'
+        return true_name
 
-    children_unvac = decode(wb, 'tmp', abc[3], rows)
-    children_vac_subjects = decode(wb, 'tmp', abc[6], rows)
-    children_vac_measles = decode(wb, 'tmp', abc[10], rows)
+    if name == 'Республика Адыгея (Адыгея)':
+        true_name = 'Республика Адыгея'
+        return true_name
+
+    if name == 'Кемеровская область - Кузбасс':
+        true_name = 'Кемеровская область'
+        return true_name
+
+    if name == 'Ханты-Мансийский автономный округ-Югра' or 'Ханты-Мансийский АО':
+        true_name = 'Ханты-Мансийский автономный округ — Югра'
+        return true_name
+
+    if name == 'Ямало-Ненецкий АО':
+        true_name = 'Ямало-Ненецкий автономный округ'
+        return true_name
+
+    if name == 'Чувашская Республика – Чувашия':
+        true_name = 'Чувашская Республика'
+        return true_name
+
+    if name == 'Республика Татарстан (Татарстан)':
+        true_name = 'Республика Татарстан'
+        return true_name
+
+    if name == 'Республика Северная Осетия-Алания' or 'Республика Северная Осетия':
+        true_name = 'Республика Северная Осетия — Алания'
+        return true_name
+
+    if name == 'Республика Саха ( Якутия )':
+        true_name = 'Республика Саха (Якутия)'
+        return true_name
+
+    if name == 'Еврейская АО':
+        true_name = 'Еврейская автономная область'
+        return true_name
+
+    if name == 'Чукотский АО':
+        true_name = 'Чукотский автономный округ'
+        return true_name
+
+
+def insert(rg_id, rows, date_now):
+    sheet = date_now.strftime('%U')
+
+    total_unvac = decode(wb, f'{sheet}', abc[2], rows)
+    total_vac_subjects = decode(wb, f'{sheet}', abc[5], rows)
+    total_vac_measles = decode(wb, f'{sheet}', abc[10], rows)
+    session.add(VaccinatedMeasles(rg_id, date_now, total_id, total_vac_measles, total_unvac, total_vac_subjects))
+
+    children_unvac = decode(wb, f'{sheet}', abc[3], rows)
+    children_vac_subjects = decode(wb, f'{sheet}', abc[6], rows)
+    children_vac_measles = decode(wb, f'{sheet}', abc[11], rows)
     session.add(
-        VaccinatedMeasles(rg_id, date, children_id, children_vac_measles, children_unvac, children_vac_subjects))
+        VaccinatedMeasles(rg_id, date_now, children_id, children_vac_measles, children_unvac, children_vac_subjects))
 
-    adult_unvac = decode(wb, 'tmp', abc[4], rows)
-    adult_vac_subjects = decode(wb, 'tmp', abc[7], rows)
-    adult_vac_measles = decode(wb, 'tmp', abc[11], rows)
-    session.add(VaccinatedMeasles(rg_id, date, adult_id, adult_vac_measles, adult_unvac, adult_vac_subjects))
+    adult_unvac = decode(wb, f'{sheet}', abc[4], rows)
+    adult_vac_subjects = decode(wb, f'{sheet}', abc[7], rows)
+    adult_vac_measles = decode(wb, f'{sheet}', abc[12], rows)
+    session.add(VaccinatedMeasles(rg_id, date_now, adult_id, adult_vac_measles, adult_unvac, adult_vac_subjects))
 
     migrants_unvac = None
-    migrants_vac_subjects = decode(wb, 'tmp', abc[8], rows)
-    migrants_vac_measles = decode(wb, 'tmp', abc[12], rows)
+    migrants_vac_subjects = decode(wb, f'{sheet}', abc[8], rows)
+    migrants_vac_measles = decode(wb, f'{sheet}', abc[13], rows)
     session.add(
-        VaccinatedMeasles(rg_id, date, migrants_id, migrants_vac_measles, migrants_unvac, migrants_vac_subjects))
+        VaccinatedMeasles(rg_id, date_now, migrants_id, migrants_vac_measles, migrants_unvac, migrants_vac_subjects))
+
+    new_citizens_unvac = None
+    new_citizens_vac_subjects = decode(wb, f'{sheet}', abc[9], rows)
+    new_citizens_vac_measles = decode(wb, f'{sheet}', abc[14], rows)
+    session.add(
+        VaccinatedMeasles(rg_id, date_now, new_citizens_id, new_citizens_vac_measles, new_citizens_unvac,
+                          new_citizens_vac_subjects))
 
 
-for row in range(9, 101):
-    region_name = decode(wb, 'tmp', 'B', row)
+worksheet = wb[f'{week_number}']
+max_row = worksheet.max_row
+
+for row in range(8, max_row - 8):
+
+    name = decode(wb, f'{week_number}', 'B', row)
+    name_bd = session.query(TerritorialUnit).filter_by(name_ru=f'{name}').first()
+    if name_bd is None:
+        region_name = true_region_name(name)
+    else:
+        region_name = name
     try:
         region = session.query(TerritorialUnit).filter_by(name_ru=f'{region_name}').first()
         rg_id = region.id
-        insert(rg_id, row)
+        insert(rg_id, row, date)
     except AttributeError:
-        if region_name == 'Кемеровская область - Кузбасс':
-            region_name = 'Кемеровская область'
+        print(f"EROR - {region_name}")
 
-        if region_name == 'Ханты-Мансийский автономный округ-Югра':
-            region_name = 'Ханты-Мансийский автономный округ — Югра'
-
-        if region_name == 'Чувашская Республика – Чувашия':
-            region_name = 'Чувашская Республика'
-
-        if region_name == 'Республика Татарстан (Татарстан)':
-            region_name = 'Республика Татарстан'
-
-        if region_name == 'Республика Северная Осетия-Алания':
-            region_name = 'Республика Северная Осетия — Алания'
-
-        if region_name == 'Республика Адыгея (Адыгея)':
-            region_name = 'Республика Адыгея'
-
+###########################
 session.commit()
 session.close()

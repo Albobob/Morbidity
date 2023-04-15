@@ -4,6 +4,7 @@ from datetime import datetime
 from ...base import Base
 
 
+# TODO Добавить описание
 class VaccinatedMeasles(Base):
     """
 

@@ -22,5 +22,4 @@ class TerritorialUnit(Base):
         self.geo_category_id = geo_category_id
 
     def __repr__(self):
-        return f"<TerritorialUnit(id={self.id}, name_ru='{self.name_ru}', name_eng='{self.name_eng}', " \
-               f"short_name_ru='{self.short_name_ru}', short_name_eng='{self.short_name_eng}')>"
+        return f"<TerritorialUnit(id={self.id}, name_ru='{self.name_ru}', name_eng='{self.name_eng}')>"
