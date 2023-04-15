@@ -1,1 +1,0 @@
-SQL_PATH = 'sqlite:///database.db'
