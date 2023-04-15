@@ -51,7 +51,8 @@ districts = [('Центральный федеральный округ', 'Centr
              ('Приволжский федеральный округ', 'Privolzhsky Federal District', 'ПФО', 'PFD'),
              ('Уральский федеральный округ', 'Urals Federal District', 'УФО', 'UFD'),
              ('Сибирский федеральный округ', 'Siberian Federal District', 'СФО', 'SibFD'),
-             ('Дальневосточный федеральный округ', 'Fareast Federal District', 'ДФО', 'FED')]
+             ('Дальневосточный федеральный округ', 'Fareast Federal District', 'ДФО', 'FED'),
+             ('Крымский федеральный округ', 'Crimean Federal District', 'КФО', 'CrED')]
 
 # Добавляем округа
 for district in districts:
@@ -151,7 +152,13 @@ territorial_units = [
     ("Магаданская область", "Magadan Region", 8, 6),
     ("Сахалинская область", "Sakhalin Region", 8, 6),
     ("Еврейская автономная область", "Jewish Autonomous Region", 8, 7),
-    ("Чукотский автономный округ", "Chukotka Autonomous Area", 8, 5)
+    ("Чукотский автономный округ", "Chukotka Autonomous Area", 8, 5),
+
+    ("Донецкая Народная Республика", "Donetsk People's Republic", 9, 3),
+    ("Луганская Народная Республика", "Luhansk People's Republic", 9, 3),
+    ("Запорожская область", "Zaporozhye region", 9, 6),
+    ("Херсонская область", "Kherson region", 9, 6),
+
 ]
 
 # Добавляем Регионы
