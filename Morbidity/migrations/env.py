@@ -1,5 +1,5 @@
 from logging.config import fileConfig
-from ..models.base import metadata
+
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
@@ -15,9 +15,24 @@ fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
-target_metadata = metadata
+'''ИМПОРТИРУЕМ МОДЕЛИ '''
+# География
+from models.geo_category import GeoCategory
+from models.rus_total import RusTotal
+from models.district import District
+from models.territorial_unit import TerritorialUnit
+# Показатели
+from models.population_group import PopulationGroup
+from models.type_value import TypeValue
+# Форма №1
+from models.form.form_1 import FormOne
+from models.form.name_of_diseases import NameOfDiseases
+# Отчеты
+from models.report.measles_immunization_report.vaccinated_measles import VaccinatedMeasles
+'''ИМПОРТИРУЕМ МОДЕЛИ '''
+from models.base import Base
+target_metadata = Base.metadata
+
 
 
 # other values from the config, defined by the needs of env.py,
