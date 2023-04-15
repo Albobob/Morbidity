@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from models.base import Base
+from .base import Base
 
 
 class GeoCategory(Base):
@@ -16,3 +16,5 @@ class GeoCategory(Base):
 
     def __repr__(self):
         return f"<GeoCategory(id={self.id}, name={self.name}, name_eng={self.name_eng})>"
+
+

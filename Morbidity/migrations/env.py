@@ -29,10 +29,12 @@ from models.form.form_1 import FormOne
 from models.form.name_of_diseases import NameOfDiseases
 # Отчеты
 from models.report.measles_immunization_report.vaccinated_measles import VaccinatedMeasles
-'''ИМПОРТИРУЕМ МОДЕЛИ '''
-from models.base import Base
-target_metadata = Base.metadata
 
+'''ИМПОРТИРУЕМ МОДЕЛИ '''
+
+from models.base import Base
+
+target_metadata = Base.metadata
 
 
 # other values from the config, defined by the needs of env.py,
