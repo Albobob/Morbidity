@@ -21,11 +21,12 @@ class FormTwo(Base):
     relationship('PopulationGroup', backref='form_2')
     # Тип показателя (Интенсивный/Экстенсивный)
     type_value = Column(Integer, ForeignKey('type_value.id'), nullable=False)
-    relationship('TypeValue',  backref='form_2')
+    relationship('TypeValue', backref='form_2')
 
-    def __init__(self, date, name_of_diseases, population_group, type_value, value):
+    def __init__(self, date, rg_id, name_of_diseases_id, population_group, type_value, value):
         self.date = date
-        self.nod_id = name_of_diseases
+        self.nod_id = name_of_diseases_id
+        self.rg_id = rg_id
         self.pg_id = population_group
         self.type_value = type_value
         self.value = value

@@ -8,9 +8,11 @@ class NameOfDiseases(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
     num_form = Column(Integer, nullable=False)
+    krista_id = Column(String(15))
     comment = Column(String(250))
 
-    def __init__(self, name, num_form, comment):
+    def __init__(self, name, num_form, krista_id, comment):
         self.name = name
         self.num_form = num_form
+        self.krista_id = krista_id
         self.comment = comment
