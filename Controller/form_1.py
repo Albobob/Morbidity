@@ -42,15 +42,28 @@ type_value_abs_id = type_value_abs.id
 type_value_rate = session.query(TypeValue).filter_by(name='Показатель на 100 тыс. населения').first()
 type_value_rate_id = type_value_rate.id
 
-date = datetime.datetime(2010, 1, 1)
+ls = {}
 
-for i in range(1,9):
-    query = session.query(District.name_ru, func.sum(FormTwo.value), ). \
-        join(TerritorialUnit, FormTwo.rg_id == TerritorialUnit.id) \
-        .join(District, TerritorialUnit.district_id == District.id) \
-        .filter(District.id == i, FormTwo.nod_id == 9, FormTwo.pg_id == 1, FormTwo.type_value == 1,
-                FormTwo.date == date).all()
-    pprint(query)
+for y in range(13):
+    date = datetime.datetime(2010 + y, 1, 1)
+    print(f'__________________________Форма 2___{date.strftime("%Y Год")}_____________________________________')
+    for d in range(1, 9):
+        query = session.query(District.name_ru, func.sum(FormTwo.value), ) \
+            .join(TerritorialUnit, FormTwo.rg_id == TerritorialUnit.id) \
+            .join(District, TerritorialUnit.district_id == District.id) \
+            .join(RusTotal, RusTotal.id == District.rus_total_id) \
+            .filter(District.id == d, FormTwo.nod_id == 7, FormTwo.pg_id == 1, FormTwo.type_value == 1,
+                    FormTwo.date == date).all()
+        print(query[0][1])
+    # l.append(query[0][1])
+    # nz_name = session.query(NameOfDiseases).filter_by(id=i).first()
+
+# try:
+#     ls[nz_name.name] = sum(l)
+#     print(f'{sum(l)};{nz_name.name};{l}')
+# except TypeError:
+#     ls[nz_name.name] = None
+#     print(f'{None};{nz_name.name};{l}')
 
 
 

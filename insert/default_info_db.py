@@ -98,7 +98,7 @@ territorial_units = [
     ('Астраханская область', 'Astrakhan Region', 3, 6),
     ('Волгоградская область', 'Volgograd Region', 3, 6),
     ('Ростовская область', 'Rostov Region', 3, 6),
-    ('г.Севастополь', 'City of Sevastopol', 3, 8),
+    ('г. Севастополь', 'City of Sevastopol', 3, 8),
 
     ('Республика Дагестан', 'Republic of Dagestan', 4, 3),
     ('Республика Ингушетия', 'Republic of Ingushetia', 4, 3),
