@@ -12,7 +12,7 @@ from Morbidity.models.territorial_unit import TerritorialUnit
 from Morbidity.models.population_group import PopulationGroup
 from Morbidity.models.type_value import TypeValue
 from Morbidity.models.form.form_2 import FormTwo
-from SMP import get_smp
+from Morbidity.Controller.SMP import get_smp
 from openpyxl import load_workbook
 
 engine = create_engine("sqlite:///C:/Users/SimonyanAR.FCGIE/Desktop/Project/Morbidity/database.db", echo=False)
@@ -63,7 +63,7 @@ def get_up_down(date_first: int, date_last: int, nz_id: int, rg_id_1: int, rg_id
     data_2 = get_data(date_first, date_last, nz_id, rg_id_2)
     data_3 = get_data(date_first, date_last, nz_id, rg_id_3)
 
-    wb = load_workbook(filename='tmp.xlsx')
+    wb = load_workbook(filename='C:/Users/SimonyanAR.FCGIE/Desktop/Project/Morbidity/Controller/tmp.xlsx')
     abc = list(string.ascii_lowercase)
 
     years = [year for year in range(date_first, date_last + 1)]
@@ -96,4 +96,3 @@ def get_up_down(date_first: int, date_last: int, nz_id: int, rg_id_1: int, rg_id
     return output_name
 
 
-print(get_up_down(df, dl, nz_input, rg_1, rg_2, rg_3))
