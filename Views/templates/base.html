@@ -15,7 +15,13 @@
 <body>
 <div class="wrapper">
     {% block menu %}
-
+    <header class="header">
+        <ul>
+            <li><a href="#"></a>Отчеты</li>
+            <li><a href="{{ url_for('smp') }}">СМП</a></li>
+            <li><a href="#"></a>Something</li>
+        </ul>
+    </header>
     {% endblock menu %}
 
     {% block content %}

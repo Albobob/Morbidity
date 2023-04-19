@@ -1,0 +1,29 @@
+{% extends  'base.html'%}
+
+{% block content %}
+<div class="wraper">
+    <div class="info">
+
+        <form action="{{ url_for('smp') }}" method="POST">
+            <label for="date_first">Введите год:</label>
+            <!--            # TODO: Сделать что бы подсталялся максимальное и минимальне значение в год-->
+            <input type="number" min="2010" max="2019" step="1" name="date_first"
+                   value="{{ request.form['date_first'] }}"><br><br>
+            <label for="date_last">Введите год:</label>
+            <input type="number" min="2010" max="2019" step="1" name="date_last"
+            value="{{ request.form['date_last'] }}"><br><br>
+            <label for="nz_input">Введите номер нозологии:</label>
+            <input type="number" min="1" max="150" step="1" name="nz_input"><br><br>
+            <label for="rg_id">Введите id территории:</label>
+            <input type="number" min="1" max="150" step="1" name="rg_id"><br><br>
+            <input type="submit" value="Ввести">
+        </form>
+
+        <h3>SMP = {{ value_smp }}</h3>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
