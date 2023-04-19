@@ -9,9 +9,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/SimonyanAR.FCGIE/Des
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-tu = get_tu_info()
-nz = get_nz_info()
-
 
 @app.route('/')
 def home():
@@ -20,22 +17,25 @@ def home():
 
 @app.route('/smp', methods=['GET', 'POST'])
 def smp():
+    tu = get_tu_info()
+    nz = get_nz_info()
     if request.method == 'POST':
-
         date_first = int(request.form['date_first'])
         date_last = int(request.form['date_last'])
-        nz_input = int(request.form['nz_input'])
-        # rg_id = int(request.form['rg_id'])
-        rg_id = int(request.form['rg_id'])
-        a = int(request.form['nz_id'])
+        rg_id = int(request.form['tu_id'])
+        nz_id = int(request.form['nz_id'])
 
-        print(f'{date_first} {date_last} {nz_input} {rg_id} {a}')
+        print(f'{date_first} {date_last} {nz_id} {rg_id}')
 
-        value = get_smp(date_first, date_last, nz_input, rg_id)
+        value = get_smp(date_first, date_last, nz_id, rg_id)
         return render_template('smp.html', value_smp=value, regions=tu, nod=nz)
     else:
-        return render_template('smp.html')
+        return render_template('smp.html', regions=tu, nod=nz)
 
+
+@app.route('/up_down')
+def up_down():
+    return render_template(f'up_down.html', title='Главная')
 
 if __name__ == '__main__':
     app.run(debug=True)

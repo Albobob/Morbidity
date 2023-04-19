@@ -7,13 +7,25 @@
         <form action="{{ url_for('smp') }}" method="POST">
             <label for="date_first">Введите год:</label>
             <!--            # TODO: Сделать что бы подсталялся максимальное и минимальне значение в год-->
-            <input type="number" min="2010" max="2010" step="1" name="date_first"
+            <input type="number" min="2010" max="2023" step="1" name="date_first"
                    value="{{ request.form['date_first'] }}"><br><br>
             <label for="date_last">Введите год:</label>
-            <input type="number" min="2019" max="2019" step="1" name="date_last"
+            <input type="number" min="2010" max="2023" step="1" name="date_last"
                    value="{{ request.form['date_last'] }}"><br><br>
 
-            <select name="tu_id">
+            <select name="tu_id_1">
+                {% for region_id, region_name in regions %}
+                <option value="{{ region_id }}">{{ region_name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <select name="tu_id_2">
+                {% for region_id, region_name in regions %}
+                <option value="{{ region_id }}">{{ region_name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <select name="tu_id_2">
                 {% for region_id, region_name in regions %}
                 <option value="{{ region_id }}">{{ region_name }}</option>
                 {% endfor %}
