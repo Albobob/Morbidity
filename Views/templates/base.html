@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>ERROR</title>
+    {%endif%}
+    {% endblock title %}
+    <title>{{ title }}</title>
+
+</head>
+<body>
+<div class="wrapper">
+    {% block menu %}
+
+    {% endblock menu %}
+
+    {% block content %}
+
+    {% endblock content %}
+</div>
+</body>
+</html>

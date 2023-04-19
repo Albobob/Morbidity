@@ -46,4 +46,3 @@ data_1 = get_data(date_first, date_last, nz_input, rg_id_1)
 data_2 = get_data(date_first, date_last, nz_input, rg_id_2)
 data_3 = get_data(date_first, date_last, nz_input, rg_id_3)
 
-def
