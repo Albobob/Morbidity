@@ -1,0 +1,28 @@
+.container {  display: grid;
+  border: 1px solid red;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ЦФО СЗФО СКФО УФО"
+    "ЦФО СЗФО ПФО СФО"
+    "ЦФО ЮФО ПФО ДФО";
+}
+
+.ЦФО { grid-area: ЦФО; }
+
+.СЗФО { grid-area: СЗФО; }
+
+.ЮФО { grid-area: ЮФО; }
+
+.СКФО { grid-area: СКФО; }
+
+.ПФО { grid-area: ПФО; }
+
+.УФО { grid-area: УФО; }
+
+.СФО { grid-area: СФО; }
+
+.ДФО { grid-area: ДФО; }

@@ -46,6 +46,8 @@ def up_down():
         rg_id_1 = int(request.form['tu_id_1'])
         rg_id_2 = int(request.form['tu_id_2'])
         rg_id_3 = int(request.form['tu_id_3'])
+        # TODO: Сделать сохранение всех выгружаемых файлов в папку
+        # TODO: Сделать проверку на существование файла
 
         print(f'{date_first} {date_last} {nz_id} {rg_id_1} {rg_id_2} {rg_id_3}')
 
