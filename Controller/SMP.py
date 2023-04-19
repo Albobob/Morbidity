@@ -37,5 +37,4 @@ def get_smp(date_first: int, date_last: int, nz_input: int, rg_id: int) -> float
 
     return sum(result_list) / len(result_list)
 
-
 # print(get_smp(2010, 2019, 29, 1))

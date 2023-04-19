@@ -11,13 +11,32 @@
                    value="{{ request.form['date_first'] }}"><br><br>
             <label for="date_last">Введите год:</label>
             <input type="number" min="2010" max="2019" step="1" name="date_last"
-            value="{{ request.form['date_last'] }}"><br><br>
-            <label for="nz_input">Введите номер нозологии:</label>
-            <input type="number" min="1" max="150" step="1" name="nz_input"><br><br>
-            <label for="rg_id">Введите id территории:</label>
-            <input type="number" min="1" max="150" step="1" name="rg_id"><br><br>
+                   value="{{ request.form['date_last'] }}"><br><br>
+
+            <select name="tu_id">
+                {% for region_id, region_name in regions %}
+                {% if loop.index == 1 %}
+                <option value="{{ region_id }}" selected>{{ region_name }}</option>
+                {% else %}
+                <option value="{{ region_id }}">{{ region_name }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            <br><br>
+            <select name="nz_id">
+                {% for nz_id, nz_name in nod %}
+                <option value="{{ nz_id }}">{{ nz_name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+
+            <br><br>
             <input type="submit" value="Ввести">
         </form>
+
+        
+
 
         <h3>SMP = {{ value_smp }}</h3>
     </div>
