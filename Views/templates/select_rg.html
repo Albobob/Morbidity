@@ -1,0 +1,8 @@
+<!--            # TODO: Шаблон что бы не повторялись Select`ы-->
+<div class="select_region">
+    <select name="ter_unit">
+        {% for, region in regions %}
+        <option value="{{ region.id }}">{{ region.name_ru }}</option>
+        {% endfor %}
+    </select>
+</div>

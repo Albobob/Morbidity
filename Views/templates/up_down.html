@@ -15,30 +15,30 @@
                    value="{{ request.form['date_last'] }}"><br><br>
 
             <select name="tu_id_1">
-                            {% for region_id, region_name in regions %}
-                            <option value="{{ region_id }}">{{ region_name }}</option>
-                            {% endfor %}
-                        </select>
-                        <br><br>
-                        <select name="tu_id_2">
-                            {% for region_id, region_name in regions %}
-                            <option value="{{ region_id }}">{{ region_name }}</option>
-                            {% endfor %}
-                        </select>
-                        <br><br>
-                        <select name="tu_id_3">
-                            {% for region_id, region_name in regions %}
-                            <option value="{{ region_id }}">{{ region_name }}</option>
-                            {% endfor %}
-                        </select>
-                        <br><br>
+                {% for region in regions %}
+                <option value="{{ region.id }}">{{ region.name_ru }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <!--            # TODO: Сделать что бы не повторялись Select`ы-->
+            <select name="tu_id_2">
+                {% for region in regions %}
+                <option value="{{ region.id }}">{{ region.name_ru }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <select name="tu_id_3">
+                {% for region in regions %}
+                <option value="{{ region.id }}">{{ region.name_ru }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
             <select name="nz_id">
                 {% for nz_id, nz_name in nod %}
                 <option value="{{ nz_id }}">{{ nz_name }}</option>
                 {% endfor %}
             </select>
             <br><br>
-
 
             <br><br>
             <input type="submit" value="Ввести">
