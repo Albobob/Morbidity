@@ -1,8 +1,12 @@
 {% extends  'base.html'%}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/smp.css') }}">
+{% endblock head %}
+
 {% block content %}
 
-<div class="wraper">
+<div class="wrapper">
     <div class="info">
         <form action="{{ url_for('smp') }}" method="POST">
             <label for="date_first">Введите год:</label>
@@ -14,8 +18,8 @@
                    value="{{ request.form['date_last'] }}"><br><br>
 
             <select name="tu_id">
-                {% for region_id, region_name in regions %}
-                <option value="{{ region_id }}">{{ region_name }}</option>
+                {% for region in regions %}
+                <option value="{{ region.id }}">{{ region.name_ru }}</option>
                 {% endfor %}
             </select>
             <br><br>

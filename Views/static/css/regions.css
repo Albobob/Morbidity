@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  line-height: 1; /* устанавливаем межстрочное расстояние равным высоте шрифта */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr); /* Изменяем количество строк на 3 */
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  width: 100hv;
+  height: 100vh; /* Устанавливаем высоту контейнера равной высоте окна браузера */
+ grid-template-areas:
+    "ЦФО СЗФО СКФО УФО"
+    "ЦФО СЗФО СКФО СФО"
+    "ЦФО ЮФО ПФО ДФО"; /* Изменяем расположение блоков в grid-template-areas */
+}
+
+.ЦФО { grid-area: ЦФО; }
+
+.СЗФО { grid-area: СЗФО; }
+
+.ЮФО { grid-area: ЮФО; }
+
+.СКФО { grid-area: СКФО; }
+
+.ПФО { grid-area: ПФО; }
+
+.УФО { grid-area: УФО; }
+
+.СФО { grid-area: СФО; }
+
+.ДФО { grid-area: ДФО; }

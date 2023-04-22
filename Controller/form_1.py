@@ -12,10 +12,11 @@ from Morbidity.models.territorial_unit import TerritorialUnit
 from Morbidity.models.population_group import PopulationGroup
 from Morbidity.models.type_value import TypeValue
 from Morbidity.models.form.form_2 import FormTwo
+from Morbidity.config import SQL_PATH
 
 abc = list(string.ascii_lowercase)
 # Подключаемся к БД
-engine = create_engine("sqlite:///C:/Users/SimonyanAR.FCGIE/Desktop/Project/Morbidity/database.db", echo=False)
+engine = create_engine(f"{SQL_PATH}", echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
 
@@ -68,7 +69,8 @@ def y():
 
             query = session.query(func.extract('year', FormTwo.date)) \
                 .join(TerritorialUnit, FormTwo.rg_id == TerritorialUnit.id) \
-                .filter(TerritorialUnit.id == i, FormTwo.nod_id == nz, FormTwo.pg_id == 1, FormTwo.type_value == 1).all()
+                .filter(TerritorialUnit.id == i, FormTwo.nod_id == nz, FormTwo.pg_id == 1,
+                        FormTwo.type_value == 1).all()
             if len(query) != 13:
                 print(f'{name[0][0]} - {len(query)}')
 

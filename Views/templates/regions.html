@@ -1,110 +1,145 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="regions.css">
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/regions.css') }}">
+{% endblock head %}
+
+{% block content %}
+
+
 <div class="container">
     <div class="ЦФО">
-        <table>
-            <caption><h2>ЦФО</h2></caption>
-            <tr>
-                <th></th>
-            </tr>
+        <!--        # TODO: Сделать что бы в заголовок подставлялось из базы данных по ID-->
+        <!--        # TODO: Из TU или из District?-->
+        {% for region in regions %}
+        {% if region.id == 91 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
 
-            <tr>
-                <td>1</td>
-                <td>Белгородская область</td>
-            </tr>
-
-            <tr>
-                <td>2</td>
-                <td>Брянская область</td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Владимирская область</td>
-            </tr>
+        {% for region in regions %}
+        {% if region.district_id == 1 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
 
     </div>
-
     <div class="СЗФО">
-        <table>
-            <caption><h2>СЗФО</h2></caption>
-            <tr>
-                <td>19</td>
-                <td>Республика Карелия</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>Республика Коми</td>
-            </tr>
-            <tr>
-                <td>21</td>
-                <td>Архангельская область</td>
-            </tr>
-            <tr>
-                <td>22</td>
-                <td>Ненецкий автономный окру</td>
-            </tr>
-            <tr>
-                <td>22</td>
-                <td>Ненецкий автономный окру</td>
-            </tr>
-        </table>
+        {% for region in regions %}
+        {% if region.id == 92 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 2 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+
+
     </div>
     <div class="ЮФО">
-        /**//*adadad*/as*d/ad/as*d/as*d
-        /**//*adadad*/as*d/ad/as*d/as*d
-        /**//*adadad*/as*d/ad/as*d/as*d
-        /**//*adadad*/as*d/ad/as*d/as*d
-        /**//*adadad*/as*d/ad/as*d/as*d/
-        **//*adadad*/as*d/ad/as*d/as*d
+        {% for region in regions %}
+        {% if region.id == 93 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 3 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
 
 
     </div>
     <div class="СКФО">
-        ADAadadADAadadADAadadADAadad
-        dadADAadadADAadadADAadadADAad
-        dADAadadADAadadADAadadADAada
-        DAadadADAadadADAadadADAadadAD
-        adADAadadADAadadADAadad
-    </div>
-    <div class="ПФО">
-        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        $$$$$$$$$$$$$$$$$$$$$$$$$$$
-        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        $$$$$$$$$$$$$$$$$$$$$
-    </div>
-    <div class="УФО">
-        ^^^^^^^^^^^^^^^^^^^^^^
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    </div>
-    <div class="СФО">
-        **************************
-        **************************
-        **************************
-        **************************
-        **************************
-        **************************
-        **************************
-        **************************
-        **************************
-    </div>
-    <div class="ДФО">
-        PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
-        PPPPPPPPPPPPPPPPPPPPPPPPPP
-        PPPPPPPPPPPPPPPPPPPPPPPPPP
-        PPPPPPPPPPPPPPPPPPPPPPPPPP
-        PPPPPPPPPPPPPPPPPPPPPPPPPP
+        {% for region in regions %}
+        {% if region.id == 94 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 4 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+
 
     </div>
+    <div class="ПФО">
+        {% for region in regions %}
+        {% if region.id == 95 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 5 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    <div class="УФО">
+        {% for region in regions %}
+        {% if region.id == 96 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 6 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="СФО">
+        {% for region in regions %}
+        {% if region.id == 97 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 7 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="ДФО">
+        {% for region in regions %}
+        {% if region.id == 98 %} <!-- Выбор округа -->
+        <H3>{{ region.name_ru }}</H3>
+        {% endif %}
+        {% endfor %}
+
+        {% for region in regions %}
+        {% if region.district_id == 8 %}
+        <ul>
+            <li>{{ region.name_ru }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+
 </div>
-</body>
-</html>
+
+{% endblock content %}

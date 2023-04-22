@@ -21,5 +21,14 @@ class TerritorialUnit(Base):
         self.district_id = district_id
         self.geo_category_id = geo_category_id
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name_ru': self.name_ru,
+            'name_eng': self.name_eng,
+            'district_id': self.district_id,
+            'geo_category_id': self.geo_category_id,
+        }
+
     def __repr__(self):
         return f"<TerritorialUnit(id={self.id}, name_ru='{self.name_ru}', name_eng='{self.name_eng}')>"

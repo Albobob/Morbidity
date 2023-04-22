@@ -10,7 +10,10 @@
     {%endif%}
     {% endblock title %}
     <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block head %}
 
+    {% endblock head %}
 </head>
 <body>
 <div class="wrapper">
@@ -20,7 +23,8 @@
             <li><a href="#"></a>Отчеты</li>
             <li><a href="{{ url_for('smp') }}">СМП</a></li>
             <li><a href="{{ url_for('up_down') }}">Сравнение</a></li>
-            <li><a href="#"></a>Something</li>
+            <li><a href="{{ url_for('tst') }}">Something</a></li>
+            <li><a href="{{ url_for('regions') }}">Регионы</a></li>
         </ul>
     </header>
     {% endblock menu %}

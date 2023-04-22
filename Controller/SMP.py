@@ -2,8 +2,9 @@ from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from Morbidity.models.form.form_2 import FormTwo
+from Morbidity.config import SQL_PATH
 
-engine = create_engine("sqlite:///C:/Users/SimonyanAR.FCGIE/Desktop/Project/Morbidity/database.db", echo=False)
+engine = create_engine(f"{SQL_PATH}", echo=False)
 Session = sessionmaker(bind=engine)
 session = Session()
 
