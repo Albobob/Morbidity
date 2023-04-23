@@ -68,7 +68,8 @@ def up_down():
 def regions():
     region = get_tu_info()
     print(region)
-    return render_template(f'regions.html', title='Регионы', regions=region)
+    rg_value = 2.1234
+    return render_template(f'regions.html', title='Регионы', regions=region, rg_value=rg_value)
     pass
 
 

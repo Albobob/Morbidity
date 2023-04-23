@@ -1,34 +1,66 @@
-body {
-  margin: 0;
-  padding: 0;
+h3.district {
+  text-align: center;
 }
 .container {
+
   line-height: 1; /* устанавливаем межстрочное расстояние равным высоте шрифта */
+  font-size: 13px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(3, 1fr); /* Изменяем количество строк на 3 */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr 1fr 1fr 1fr 1fr); /* Изменяем количество строк на 3 */
   gap: 0px 0px;
   grid-auto-flow: row;
   width: 100hv;
-  height: 100vh; /* Устанавливаем высоту контейнера равной высоте окна браузера */
- grid-template-areas:
-    "ЦФО СЗФО СКФО УФО"
-    "ЦФО СЗФО СКФО СФО"
-    "ЦФО ЮФО ПФО ДФО"; /* Изменяем расположение блоков в grid-template-areas */
+  height: 80vh; /* Устанавливаем высоту контейнера равной высоте окна браузера */
+  grid-template-areas:
+    "ЦФО СЗФО СКФО УФО ДФО"
+    "ЦФО СЗФО  ПФО  СФО ДФО"
+    "ЦФО ЮФО  ПФО  СФО ДФО"
+    "ЦФО ЮФО  ПФО  СФО ДФО"
+    "ЦФО ЮФО  ПФО  СФО ДФО";
+/*  justify-content: space-araund;*/
+/*  align-content: stretch;*/
+/*    border: 1px solid red;*/
 }
 
-.ЦФО { grid-area: ЦФО; }
+.ЦФО { 
+  grid-area: ЦФО; 
+  border: 1px solid red;
+}
 
-.СЗФО { grid-area: СЗФО; }
+.СЗФО { 
+  grid-area: СЗФО; 
+  border: 1px solid red;
+}
 
-.ЮФО { grid-area: ЮФО; }
+.ЮФО { 
+  grid-area: ЮФО; 
+  border: 1px solid red;
+}
 
-.СКФО { grid-area: СКФО; }
+.СКФО { 
+  grid-area: СКФО; 
+  border: 1px solid red;
+}
 
-.ПФО { grid-area: ПФО; }
 
-.УФО { grid-area: УФО; }
+.ПФО { 
+  grid-area: ПФО; 
+  border: 1px solid red;
+}
+  
+.УФО { 
+  grid-area: УФО;
+  border: 1px solid red;
+}
 
-.СФО { grid-area: СФО; }
+.СФО { 
+  grid-area: СФО; 
+  border: 1px solid red;
+}
 
-.ДФО { grid-area: ДФО; }
+.ДФО { 
+  grid-area: ДФО; 
+  border: 1px solid red;
+}
+  

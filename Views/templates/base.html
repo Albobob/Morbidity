@@ -16,18 +16,22 @@
     {% endblock head %}
 </head>
 <body>
+{% block menu %}
+<div class="header">
+    <div class="header_content">
+        <nav class="nav">
+            <ul class="menu">
+                <li class="menu__list"><a href="#"></a>Отчеты</li>
+                <li class="menu__list"><a href="{{ url_for('smp') }}">СМП</a></li>
+                <li class="menu__list"><a href="{{ url_for('up_down') }}">Сравнение</a></li>
+                <li class="menu__list"><a href="{{ url_for('tst') }}">Something</a></li>
+                <li class="menu__list"><a href="{{ url_for('regions') }}">Регионы</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock menu %}
 <div class="wrapper">
-    {% block menu %}
-    <header class="header">
-        <ul>
-            <li><a href="#"></a>Отчеты</li>
-            <li><a href="{{ url_for('smp') }}">СМП</a></li>
-            <li><a href="{{ url_for('up_down') }}">Сравнение</a></li>
-            <li><a href="{{ url_for('tst') }}">Something</a></li>
-            <li><a href="{{ url_for('regions') }}">Регионы</a></li>
-        </ul>
-    </header>
-    {% endblock menu %}
 
     {% block content %}
 

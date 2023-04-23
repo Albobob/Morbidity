@@ -14,14 +14,14 @@
         <!--        # TODO: Из TU или из District?-->
         {% for region in regions %}
         {% if region.id == 91 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
         {% for region in regions %}
         {% if region.district_id == 1 %}
         <ul>
-            <li>{{ region.name_ru }}</li>
+            <li>{{ region.name_ru }} | {{rg_value}}</li>
         </ul>
         {% endif %}
         {% endfor %}
@@ -30,7 +30,7 @@
     <div class="СЗФО">
         {% for region in regions %}
         {% if region.id == 92 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
@@ -47,7 +47,7 @@
     <div class="ЮФО">
         {% for region in regions %}
         {% if region.id == 93 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
@@ -64,7 +64,7 @@
     <div class="СКФО">
         {% for region in regions %}
         {% if region.id == 94 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
@@ -81,7 +81,7 @@
     <div class="ПФО">
         {% for region in regions %}
         {% if region.id == 95 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
@@ -97,7 +97,7 @@
     <div class="УФО">
         {% for region in regions %}
         {% if region.id == 96 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
@@ -112,7 +112,7 @@
     <div class="СФО">
         {% for region in regions %}
         {% if region.id == 97 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
@@ -127,14 +127,14 @@
     <div class="ДФО">
         {% for region in regions %}
         {% if region.id == 98 %} <!-- Выбор округа -->
-        <H3>{{ region.name_ru }}</H3>
+        <H3 class="district">{{ region.name_ru }}</H3>
         {% endif %}
         {% endfor %}
 
         {% for region in regions %}
         {% if region.district_id == 8 %}
         <ul>
-            <li>{{ region.name_ru }}</li>
+            <li>{{ region.name_ru }} </li>
         </ul>
         {% endif %}
         {% endfor %}
