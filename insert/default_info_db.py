@@ -16,6 +16,7 @@ from Morbidity.models.type_value import TypeValue
 # Форма №1
 from Morbidity.models.form.form_1 import FormOne
 from Morbidity.models.form.name_of_diseases import NameOfDiseases
+from Morbidity.models.form.form_2 import FormTwo
 # Отчеты
 from Morbidity.models.report.measles_immunization_report.vaccinated_measles import VaccinatedMeasles
 

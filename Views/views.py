@@ -20,7 +20,8 @@ def home():
 
 @app.route('/tst')
 def tst():
-    return render_template(f'tst.html', title='Главная')
+    nz = get_nz_info()
+    return render_template(f'tst.html', title='Главная', nod=nz)
 
 
 @app.route('/smp', methods=['GET', 'POST'])

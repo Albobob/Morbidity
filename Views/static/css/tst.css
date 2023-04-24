@@ -1,10 +1,531 @@
-.modal{
-position:fixed;
-left: 0;
-top: 0:
-width: 100;
-height: 100vh;
-z-index: 99998;
-background-color: #374954;
+.parent {
+padding: 40px 0px 0px 0px;
+display: grid;
+grid-template-columns: 2fr 1fr;
+grid-template-rows: 1fr;
+grid-column-gap: 5px;
+grid-row-gap: 0px;
+
+
+}
+
+
+select[name="nz_id"] {
+  width: 200px;
+}
+
+
+.container_main > div {
+  border: 0px dashed black;
+}
+
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+  display: grid;
+}
+
+.main { grid-area: 1 / 1 / 2 / 2; }
+.right { grid-area: 1 / 2 / 2 / 3; }
+
+.spaces {
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 1fr ;
+  gap: 5px 5px;
+
+  grid-template-areas:
+    "MSK . . . Murmansk . . . . . . . . . . . . . ."
+    "SPB . . Karelia . . . . . Nenets- . . . . . . Chukotka- Kamchatka- ."
+    ". . Len_obl Novgorod Vologda . . . Arkhangelsk Komi- Yamal . . Krasnoyarsk- . Yakutia Magadan- . ."
+    "Kaliningrad . Pskov Tver Yaroslavl Ivanovo Kostroma Mariel Kirov- Perm- Khanty Tyumen Tomsk- Kemerovo- Irkutsk- Amur- Khabarovsk- . Sakhalin-"
+    ". . Smolensk Kaluga MO Vladimir Nizhny Chuvash- Tatarstan Udmurtia Sverdlovsk Kurgan- Novosibirsk- Khakassia- Buryatia Jewish- . . ."
+    ". . Brynsk Orel Tula Ryazan Mordovia Ulyanovsk- Samara- Bashkortostan Chelyabinsk- Omsk- Altai_K Tuva- Transbaika . Primorsky- . ."
+    ". . . Kursk Lipetsk Tambov Penza- Saratov- Orenburg- . . . Altai- . . . . . ."
+    ". . . . Belgorod Voronezh Volgograd- . . . . . . . . . . . ."
+    ". . Crimea Adygea Krasnodar- Rostov- Kalmykia Astrakhan- . . . . . . . . . . ."
+    ". . . . Karachayevo Stavropol Chechen Dagestan . . . . . . . . . . ."
+    ". . . . Kabardino Ossetia Ingushetia . . . . . . . . . . . .";
+  grid-area: spaces;
+
+}
+
+.Kaliningrad { grid-area: Kaliningrad;
+  height: 55px;
+  width: 55px;
+
+}
+
+.MSK { grid-area: MSK;
+    height: 55px;
+  width: 55px;
+}
+
+.SPB { grid-area: SPB;
+    height: 55px;
+  width: 55px;
+}
+.Pskov { grid-area: Pskov;
+    height: 55px;
+  width: 55px;
+}
+
+.Len_obl { grid-area: Len_obl;
+    height: 55px;
+  width: 55px;
+}
+
+.Novgorod { grid-area: Novgorod;
+    height: 55px;
+  width: 55px;
+ }
+
+.Vologda {
+  grid-area: Vologda;
+  display: grid;
+  grid-template-rows: 2fr;
+  grid-template-columns: 2fr;
+  height: 55px;
+  width: 55px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.Karelia {
+ grid-area: Karelia;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  height: 55px;
+  width: 55px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Murmansk { 
+  grid-area: Murmansk;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  height: 55px;
+  width: 55px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tver { grid-area: Tver;
+    height: 55px;
+  width: 55px;
+}
+
+.Yaroslavl { grid-area: Yaroslavl;
+    height: 55px;
+  width: 55px;
+}
+
+.Ivanovo { grid-area: Ivanovo;
+    height: 55px;
+  width: 55px;
+}
+
+.Kostroma { grid-area: Kostroma;
+    height: 55px;
+  width: 55px;
+}
+
+.Mariel { grid-area: Mariel;
+    height: 55px;
+  width: 55px;
+}
+
+.Arkhangelsk { grid-area: Arkhangelsk;
+    height: 55px;
+  width: 55px;
+}
+
+.Komi- { grid-area: Komi-;
+    height: 55px;
+  width: 55px;
+}
+
+.Nenets- { grid-area: Nenets-;
+    height: 55px;
+  width: 55px;
+}
+
+.Kaluga { grid-area: Kaluga;
+    height: 55px;
+  width: 55px;
+ }
+
+.Orel { grid-area: Orel;
+    height: 55px;
+  width: 55px;
+}
+
+.Kursk { grid-area: Kursk;
+    height: 55px;
+  width: 55px;
+}
+
+.Brynsk { grid-area: Brynsk;
+    height: 55px;
+  width: 55px;
+ }
+
+.Smolensk { grid-area: Smolensk;
+    height: 55px;
+  width: 55px;
+}
+
+.MO { grid-area: MO;
+    height: 55px;
+  width: 55px;
+}
+
+.Tula { grid-area: Tula;
+    height: 55px;
+  width: 55px;
+}
+
+.Lipetsk { grid-area: Lipetsk;
+height: 55px;
+  width: 55px;
+}
+
+.Belgorod { grid-area: Belgorod;
+height: 55px;
+  width: 55px;
+}
+
+.Voronezh { grid-area: Voronezh;
+height: 55px;
+  width: 55px;
+}
+
+.Tambov { grid-area: Tambov;
+height: 55px;
+  width: 55px;
+}
+
+.Ryazan { grid-area: Ryazan;
+height: 55px;
+  width: 55px;
+}
+
+.Vladimir { grid-area: Vladimir;
+height: 55px;
+  width: 55px;
+}
+
+.Adygea { grid-area: Adygea;
+ height: 55px;
+  width: 55px;
+ }
+
+.Kalmykia { grid-area: Kalmykia;
+height: 55px;
+  width: 55px;
+}
+
+.Crimea { grid-area: Crimea;
+height: 55px;
+  width: 55px;
+}
+
+.Krasnodar- { grid-area: Krasnodar-;
+height: 55px;
+  width: 55px;
+}
+
+.Rostov- { grid-area: Rostov-;
+ height: 55px;
+  width: 55px;
+ }
+
+.Astrakhan- { grid-area: Astrakhan-;
+ height: 55px;
+  width: 55px;
+ }
+
+.Volgograd- { grid-area: Volgograd-;
+ height: 55px;
+  width: 55px;
+ }
+
+.Dagestan { grid-area: Dagestan;
+ height: 55px;
+  width: 55px;
+ }
+
+.Ingushetia { grid-area: Ingushetia;
+ height: 55px;
+  width: 55px;
+ }
+
+.Kabardino { grid-area: Kabardino;
+ height: 55px;
+  width: 55px;
+ }
+
+.Karachayevo { grid-area: Karachayevo;
+height: 55px;
+  width: 55px;
+}
+
+.Ossetia { grid-area: Ossetia;
+height: 55px;
+  width: 55px;
+}
+
+.Chechen { grid-area: Chechen;
+ height: 55px;
+  width: 55px;
+ }
+
+.Stavropol { grid-area: Stavropol;
+height: 55px;
+  width: 55px;
+}
+
+.Bashkortostan { grid-area: Bashkortostan;
+ height: 55px;
+  width: 55px;
+ }
+
+.Mordovia { grid-area: Mordovia;
+ height: 55px;
+  width: 55px;
+ }
+
+.Tatarstan { grid-area: Tatarstan;
+ height: 55px;
+  width: 55px;
+ }
+
+.Udmurtia { grid-area: Udmurtia;
+height: 55px;
+  width: 55px;
+}
+
+.Chuvash- { grid-area: Chuvash-;
+    height: 55px;
+  width: 55px;
+}
+
+.Perm- { grid-area: Perm-;
+    height: 55px;
+  width: 55px;
+}
+
+.Kirov- { grid-area: Kirov-;
+    height: 55px;
+  width: 55px;
+}
+
+.Nizhny { grid-area: Nizhny;
+    height: 55px;
+  width: 55px;
+}
+
+.Orenburg- { grid-area: Orenburg-;
+    height: 55px;
+  width: 55px;
+}
+
+.Penza- { grid-area: Penza-;
+    height: 55px;
+  width: 55px;
+}
+
+.Samara- { grid-area: Samara-;
+    height: 55px;
+  width: 55px;
+}
+
+.Saratov- { grid-area: Saratov-;
+    height: 55px;
+  width: 55px;
+}
+
+.Ulyanovsk- { grid-area: Ulyanovsk-;
+    height: 55px;
+  width: 55px;
+}
+
+.Kurgan- { grid-area: Kurgan-;
+    height: 55px;
+  width: 55px;
+}
+
+.Chelyabinsk- { grid-area: Chelyabinsk-;
+    height: 55px;
+  width: 55px;
+}
+
+.Sverdlovsk { grid-area: Sverdlovsk;
+    height: 55px;
+  width: 55px;
+}
+
+.Tyumen { grid-area: Tyumen;
+    height: 55px;
+  width: 55px;
+}
+
+.Khanty { grid-area: Khanty;
+    height: 55px;
+  width: 55px;
+}
+
+.Yamal { grid-area: Yamal;
+    height: 55px;
+  width: 55px;
+}
+
+.Omsk- { grid-area: Omsk-;
+    height: 55px;
+  width: 55px;
+ }
+
+.Altai_K { grid-area: Altai_K;
+    height: 55px;
+  width: 55px;
+}
+
+.Altai- { grid-area: Altai-;
+    height: 55px;
+  width: 55px;
+}
+
+.Tuva- { grid-area: Tuva-;
+    height: 55px;
+  width: 55px;
+}
+
+.Khakassia- { grid-area: Khakassia-;
+    height: 55px;
+  width: 55px;
+}
+
+.Krasnoyarsk- { grid-area: Krasnoyarsk-;
+    height: 55px;
+  width: 55px;
+}
+
+.Irkutsk- { grid-area: Irkutsk-;
+    height: 55px;
+  width: 55px;
+}
+
+.Kemerovo- { grid-area: Kemerovo-;
+    height: 55px;
+  width: 55px;
+}
+
+.Novosibirsk- { grid-area: Novosibirsk-;
+    height: 55px;
+  width: 55px;
+}
+
+.Tomsk- { grid-area: Tomsk-;
+    height: 55px;
+  width: 55px;
+ }
+
+.Buryatia { grid-area: Buryatia;
+    height: 55px;
+  width: 55px;
+}
+
+.Yakutia { grid-area: Yakutia;
+    height: 55px;
+  width: 55px;
+ }
+
+.Kamchatka- { grid-area: Kamchatka-;
+    height: 55px;
+  width: 55px;
+}
+
+.Transbaika { grid-area: Transbaika;
+    height: 55px;
+  width: 55px;
+}
+
+.Primorsky- { grid-area: Primorsky-;
+    height: 55px;
+  width: 55px;
+}
+
+.Khabarovsk- { grid-area: Khabarovsk-;
+    height: 55px;
+  width: 55px;
+}
+
+.Amur- { grid-area: Amur-;
+    height: 55px;
+  width: 55px;
+ }
+
+.Magadan- { grid-area: Magadan-;
+    height: 55px;
+  width: 55px;
+}
+
+.Sakhalin- { grid-area: Sakhalin-;
+    height: 55px;
+  width: 55px;
+}
+
+.Jewish- { grid-area: Jewish-;
+    height: 55px;
+  width: 55px;
+ }
+
+.Chukotka- { grid-area: Chukotka-;
+    height: 55px;
+  width: 55px;
+}
+
+}
+.right {
+  grid-area: right;
+}
+.footer {
+  grid-area: footer;
+}
+
+.spaces {
+  font-size: 12px; /* Измените размер шрифта на нужный Вам */
+}
+
+
+.spaces div:nth-child(1n+1) {
+  border: 1px solid ;
+}
+
+.name {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    justify-self: start;
+    align-self: start;
+    padding: 0px 2px;
+}
+.value {
+    padding: 10px 0px 0px 0px;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+}
+
+
+/*    border: 1px solid red;*/
 
 }

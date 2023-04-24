@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from ..base import Base
+from Morbidity.models.base import Base
 
 
 class FormTwo(Base):

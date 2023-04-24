@@ -2,18 +2,258 @@
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/tst.css') }}">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/tst.js') }}"></script>
-{% endblock %}
+{% endblock head %}
 
 {% block content %}
-<div class="container">
-    <div class="modal">
-        <div class="modal_region">
-            <h2>Выберите регион</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi, assumenda cum dolor dolore ea
-                eligendi excepturi, ipsam iure nobis porro quas suscipit.</p>
+<div class="parent">
+    <div class="main">
+        <div class="container_reg">
+            <div class="spaces">
+                <div class="Kaliningrad">
+                    Калин
+                </div>
+                <div class="Pskov">
+                    Псков
+                </div>
+                <div class="Len_obl">
+                    Лен
+                </div>
+                <div class="Novgorod">
+                    Нов
+                </div>
+                <div class="Vologda">
+                    <span class="name">Вол</span>
+                    <span class="value">2.002</span>
+                </div>
+                <div class="Karelia">
+                    <span class="name">Карел</span>
+                    <span class="value">3.342</span>
+                </div>
+                <div class="Murmansk">
+                    <span class="name">Мур</span>
+                    <span class="value">3.342</span>
+                </div>
+                <div class="Tver">
+                    Тве
+                </div>
+                <div class="Yaroslavl">
+                    Яро
+                </div>
+                <div class="Ivanovo">
+                    Ива
+                </div>
+                <div class="Kostroma">
+                    Кос
+                </div>
+                <div class="Mariel">
+                    Мар
+                </div>
+                <div class="Arkhangelsk">
+                    Арх
+                </div>
+                <div class="Komi-">
+                    Ком
+                </div>
+                <div class="Nenets-">
+                    Нен
+                </div>
+                <div class="Kaluga">
+                    Калуг
+                </div>
+                <div class="Orel">
+                    Орё
+                </div>
+                <div class="Kursk">
+                    Кур
+                </div>
+                <div class="Brynsk">
+                    Бря
+                </div>
+                <div class="Smolensk">
+                    Смол
+                </div>
+                <div class="MO">
+                    М.обл
+                </div>
+                <div class="Tula">
+                    Тул
+                </div>
+                <div class="Lipetsk">
+                    Лип
+                </div>
+                <div class="Belgorod">
+                    Бел
+                </div>
+                <div class="Voronezh">
+                    Вор
+                </div>
+                <div class="Tambov">
+                    Там
+                </div>
+                <div class="Ryazan">
+                    Ряз
+                </div>
+                <div class="Vladimir">
+                    Вла
+                </div>
+                <div class="Adygea">
+                    Ады
+                </div>
+                <div class="Kalmykia">
+                    Калмык
+                </div>
+                <div class="Crimea">
+                    Крым
+                </div>
+                <div class="Krasnodar-">
+                    Кра
+                </div>
+                <div class="Rostov-">
+                    Рос
+                </div>
+                <div class="Astrakhan-">
+                    Аст
+                </div>
+                <div class="Volgograd-">
+                    Вол
+                </div>
+                <div class="Dagestan">
+                    Даг
+                </div>
+                <div class="Ingushetia">
+                    Инг
+                </div>
+                <div class="Kabardino">
+                    КБР
+                </div>
+                <div class="Karachayevo">
+                    КЧР
+                </div>
+                <div class="Ossetia">
+                    СОА
+                </div>
+                <div class="Chechen">
+                    Чеч
+                </div>
+                <div class="Stavropol">
+                    Став
+                </div>
+                <div class="Bashkortostan">
+                    Баш
+                </div>
+                <div class="Mordovia">
+                    Мор
+                </div>
+                <div class="Tatarstan">
+                    Тат
+                </div>
+                <div class="Udmurtia">
+                    Удм
+                </div>
+                <div class="Chuvash-">
+                    Чув
+                </div>
+                <div class="Perm-">
+                    Пер
+                </div>
+                <div class="Kirov-">
+                    Кир
+                </div>
+                <div class="Nizhny">
+                    Ниж
+                </div>
+                <div class="Orenburg-">
+                    Оре
+                </div>
+                <div class="MSK">
+                    МСК
+                </div>
+                <div class="SPB">
+                    СПБ
+                </div>
+                <div class="Penza-">
+                    Пен
+                </div>
+                <div class="Samara-">
+                    Сам
+                </div>
+                <div class="Saratov-">
+                    Сар
+                </div>
+                <div class="Ulyanovsk-">
+                    Уль
+                </div>
+                <div class="Kurgan-">
+                    Кур
+                </div>
+                <div class="Chelyabinsk-">
+                    Чел
+                </div>
+                <div class="Sverdlovsk">
+                    Све
+                </div>
+                <div class="Tyumen">
+                    Тюм
+                </div>
+                <div class="Khanty">
+                    Хак
+                </div>
+                <div class="Yamal">
+                    ЯНАО
+                </div>
+                <div class="Omsk-">
+                    Омск
+                </div>
+                <div class="Altai_K">Алт край</div>
+                <div class="Altai-">Р. Алтай</div>
+                <div class="Tuva-">Тыва</div>
+                <div class="Khakassia-">
+                    Хак
+                </div>
+                <div class="Krasnoyarsk-">
+                    Красн
+                </div>
+                <div class="Irkutsk-">
+                    Ирк
+                </div>
+                <div class="Kemerovo-">
+                    Кем
+                </div>
+                <div class="Novosibirsk-">
+                    Нов
+                </div>
+                <div class="Tomsk-">
+                    Том
+                </div>
+
+                <div class="Buryatia">
+                    Бур
+                </div>
+                <div class="Yakutia">
+                    Яку
+                </div>
+                <div class="Kamchatka-">
+                    Кам
+                </div>
+                <div class="Transbaika">Tra</div>
+                <div class="Primorsky-">Pri</div>
+                <div class="Khabarovsk-">Kha</div>
+                <div class="Amur-">Amur</div>
+                <div class="Magadan-">Maga</div>
+                <div class="Sakhalin-">Sak</div>
+                <div class="Jewish-">Jewish</div>
+                <div class="Chukotka-">Chu</div>
+            </div>
         </div>
     </div>
+    <div class="right">
+
+        <select name="nz_id">
+            {% for nz_id, nz_name in nod %}
+            <option value="{{ nz_id }}">{{ nz_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
 </div>
-{% endblock %}
+
+{% endblock content %}
