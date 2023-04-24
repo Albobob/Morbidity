@@ -4,6 +4,7 @@ from Morbidity.Controller.SMP import get_smp
 from Morbidity.Controller.rg_info import get_tu_info
 from Morbidity.Controller.nod_info import get_nz_info
 from Morbidity.Controller.up_down_table import get_up_down
+from Morbidity.Controller.form_2_info import get_fprm_2_info
 from Morbidity.config import SQL_PATH
 
 app = Flask(__name__)
@@ -18,10 +19,16 @@ def home():
     return render_template(f'index.html', title='Главная')
 
 
-@app.route('/tst')
+@app.route('/tst', methods=['GET', 'POST'])
 def tst():
     nz = get_nz_info()
-    return render_template(f'tst.html', title='Главная', nod=nz)
+    if request.method == 'POST':
+        nz_id = int(request.form['nz_id'])
+        form_2 = get_fprm_2_info('2009-12-20 00:00:00', nz_id, 1)
+        return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2)
+    else:
+        return render_template(f'tst.html', title='Главная', nod=nz)
+
 
 
 @app.route('/smp', methods=['GET', 'POST'])

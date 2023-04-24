@@ -10,37 +10,84 @@
         <div class="container_reg">
             <div class="spaces">
                 <div class="Kaliningrad">
-                    Калин
+                    <span class="name">Калин</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 24 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Pskov">
-                    Псков
+                    <span class="name">Псков</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 28 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Len_obl">
-                    Лен
+                    <span class="name">Лен</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 25 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Novgorod">
-                    Нов
+                    <span class="name">Нов</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 27 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Vologda">
-                    <span class="name">Вол</span>
-                    <span class="value">2.002</span>
+                    <span class="name">Волог</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 23 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Karelia">
                     <span class="name">Карел</span>
-                    <span class="value">3.342</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 19 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Murmansk">
                     <span class="name">Мур</span>
-                    <span class="value">3.342</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 26 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Tver">
-                    Тве
+                    <span class="name">Тверь</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 19 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Yaroslavl">
-                    Яро
+                    <span class="name">Яро</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 17 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Ivanovo">
-                    Ива
+                    <span class="name">Ива</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 5 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kostroma">
                     Кос
@@ -166,10 +213,16 @@
                     Оре
                 </div>
                 <div class="MSK">
-                    МСК
+                    <span class="name">МСК</span>
+                    <span class="value">3.342</span>
                 </div>
                 <div class="SPB">
-                    СПБ
+                    <span class="name">СПБ</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 29 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Penza-">
                     Пен
@@ -247,12 +300,15 @@
         </div>
     </div>
     <div class="right">
-
-        <select name="nz_id">
-            {% for nz_id, nz_name in nod %}
-            <option value="{{ nz_id }}">{{ nz_name }}</option>
-            {% endfor %}
-        </select>
+        <form action="{{ url_for('tst') }}" method="POST">
+            <select name="nz_id">
+                {% for nz_id, nz_name in nod %}
+                <option value="{{ nz_id }}">{{ nz_name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="submit" value="Ввести">
+        </form>
     </div>
 </div>
 

@@ -31,4 +31,13 @@ class FormTwo(Base):
         self.type_value = type_value
         self.value = value
 
-    pass
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'date': self.date,
+            'rg_id': self.rg_id,
+            'pg_id': self.pg_id,
+            'nod_id': self.nod_id,
+            'type_value': self.type_value,
+            'value': self.value,
+        }

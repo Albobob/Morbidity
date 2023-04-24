@@ -52,41 +52,77 @@ select[name="nz_id"] {
 
 }
 
-.Kaliningrad { grid-area: Kaliningrad;
-  height: 55px;
-  width: 55px;
+.Kaliningrad { 
+    grid-area: Kaliningrad;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 
 }
 
-.MSK { grid-area: MSK;
+.MSK {
+    grid-area: MSK;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
 
-.SPB { grid-area: SPB;
+.SPB { 
+    grid-area: SPB;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
-.Pskov { grid-area: Pskov;
+.Pskov { 
+    grid-area: Pskov;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
 
 .Len_obl { grid-area: Len_obl;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
 
-.Novgorod { grid-area: Novgorod;
+
+.Novgorod { 
+    grid-area: Novgorod;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
  }
 
 .Vologda {
   grid-area: Vologda;
   display: grid;
-  grid-template-rows: 2fr;
-  grid-template-columns: 2fr;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
   height: 55px;
   width: 55px;
   justify-content: center;
@@ -117,19 +153,37 @@ select[name="nz_id"] {
   align-items: center;
 }
 
-.Tver { grid-area: Tver;
+.Tver { 
+    grid-area: Tver;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
 
-.Yaroslavl { grid-area: Yaroslavl;
+.Yaroslavl { 
+    grid-area: Yaroslavl;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
 
-.Ivanovo { grid-area: Ivanovo;
+.Ivanovo { 
+    grid-area: Ivanovo;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     height: 55px;
-  width: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 }
 
 .Kostroma { grid-area: Kostroma;
