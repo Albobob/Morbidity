@@ -4,8 +4,9 @@ from Morbidity.Controller.SMP import get_smp
 from Morbidity.Controller.rg_info import get_tu_info
 from Morbidity.Controller.nod_info import get_nz_info
 from Morbidity.Controller.up_down_table import get_up_down
-from Morbidity.Controller.form_2_info import get_fprm_2_info
+from Morbidity.Controller.form_2_info import get_fprm_2_info, get_min_max_year
 from Morbidity.config import SQL_PATH
+import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f'{SQL_PATH}'
@@ -21,20 +22,28 @@ def home():
 
 @app.route('/tst', methods=['GET', 'POST'])
 def tst():
+    current_year = datetime.datetime.now().year
+    min_year = get_min_max_year()[0]
+    max_year = get_min_max_year()[1]
+
     nz = get_nz_info()
     if request.method == 'POST':
+        year = request.form['input_year_map']
+        current_year = year
         nz_id = int(request.form['nz_id'])
-        form_2 = get_fprm_2_info('2018-01-01 00:00:00.000000', nz_id, 1)
+        form_2 = get_fprm_2_info(f'{year}-01-01 00:00:00.000000', nz_id, 1)
         value = []
+
         for i in form_2:
             value.append(i['value'])
         max_mrb = max(value)
-        print(max_mrb)
         color_value = 255
 
-        return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb)
+        return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb,
+                               current_year=current_year, min_year=min_year, max_year=max_year)
     else:
-        return render_template(f'tst.html', title='Главная', nod=nz)
+        return render_template(f'tst.html', title='Главная', nod=nz, current_year=current_year, min_year=min_year,
+                               max_year=max_year)
 
 
 @app.route('/smp', methods=['GET', 'POST'])

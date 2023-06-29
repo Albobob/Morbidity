@@ -1,22 +1,33 @@
 .parent {
-padding: 40px 0px 0px 0px;
+padding: 60px 0px 0px 120px;
 display: grid;
 grid-template-columns: 2fr 1fr;
 grid-template-rows: 1fr;
 grid-column-gap: 5px;
 grid-row-gap: 0px;
+  border: 1px solid black;
 
 
 }
 
+.input{
+padding: 0px 0px 0px 0px;
+border: 1px solid red;
+}
 
 select[name="nz_id"] {
-  width: 200px;
+  width: 197px;
+}
+input[type='number']{
+    width: 190px;
+}
+input[type='submit']{
+    width: 197px;
 }
 
-
-.container_main > div {
-  border: 0px dashed black;
+.right{
+padding: 0px 0px 0px 100px;
+border: 1px solid Green;
 }
 
 .header {
@@ -25,6 +36,7 @@ select[name="nz_id"] {
 .main {
   grid-area: main;
   display: grid;
+  border: 1px solid Blue;
 }
 
 .main { grid-area: 1 / 1 / 2 / 2; }
@@ -35,6 +47,7 @@ select[name="nz_id"] {
   grid-template-columns: 1fr ;
   grid-template-rows: 1fr ;
   gap: 5px 5px;
+
 
   grid-template-areas:
     "MSK . . . Murmansk . . . . . . . . . . . . . ."
@@ -49,7 +62,6 @@ select[name="nz_id"] {
     ". . . . Karachayevo Stavropol Chechen Dagestan . . . . . . . . . . ."
     ". . . . Kabardino Ossetia Ingushetia . . . . . . . . . . . .";
   grid-area: spaces;
-
 }
 
 .Kaliningrad { 
