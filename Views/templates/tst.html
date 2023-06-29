@@ -9,11 +9,103 @@
     <div class="main">
         <div class="container_reg">
             <div class="spaces">
+                <script>
+function updateColor(value, max_mrb, color, tag) {
+<!--    alert(`Hello! ${value} ${max_mrb} ${color}  ${tag}`);-->
+  let myElement = document.querySelector(tag);
+  var percent = value / max_mrb;
+  myElement.style.backgroundColor = `rgba(${color}, 0, 0, ${percent.toFixed(2)})`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </script>
                 <div class="Kaliningrad">
                     <span class="name">Калин</span>
                     {% for i in form_2 %}
                     {% if i.rg_id == 24 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                    updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kaliningrad");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -22,6 +114,48 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 28 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                    updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Pskov");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -30,6 +164,48 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 25 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Len_obl");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -38,6 +214,48 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 27 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Novgorod");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -46,6 +264,48 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 23 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Vologda");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -54,6 +314,48 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 19 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Karelia");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -62,6 +364,47 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 26 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Murmansk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -70,6 +413,47 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 19 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tver");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -78,6 +462,47 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 17 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Yaroslavl");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -86,216 +511,2332 @@
                     {% for i in form_2 %}
                     {% if i.rg_id == 5 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Ivanovo");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
                 <div class="Kostroma">
-                    Кос
+                    <span class="name">Кос</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 7 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kostroma");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Mariel">
-                    Мар
+                    <span class="name">Мар</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 46 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Mariel");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Arkhangelsk">
-                    Арх
+                    <span class="name">Арх</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 21 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Arkhangelsk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Komi-">
-                    Ком
+                    <span class="name">Ком</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 20 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Komi-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Nenets-">
-                    Нен
+                    <span class="name">Нен</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 22 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Nenets-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kaluga">
-                    Калуг
+                    <span class="name">Кал</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 6 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kaluga");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Orel">
-                    Орё
+                    <span class="name">Орё</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 11 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Orel");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kursk">
-                    Кур
+                    <span class="name">Кур</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 8 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kursk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Brynsk">
-                    Бря
+                    <span class="name">Бря</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 2 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Brynsk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Smolensk">
-                    Смол
+                    <span class="name">Смол</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 13 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Smolensk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="MO">
-                    М.обл
+                    <span class="name">М.обл</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 10 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".MO");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Tula">
-                    Тул
+                    <span class="name">Тул</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 16 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tula");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Lipetsk">
-                    Лип
+                    <span class="name">Лип</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 9 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Lipetsk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Belgorod">
-                    Бел
+                    <span class="name">Бел</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 1 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Belgorod");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Voronezh">
-                    Вор
+                    <span class="name">Вор</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 4 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Voronezh");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Tambov">
-                    Там
+                    <span class="name">Там</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 14 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tambov");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Ryazan">
-                    Ряз
+                    <span class="name">Ряз</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 12 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Ryazan");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Vladimir">
-                    Вла
+                    <span class="name">Вла</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 3 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Vladimir");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Adygea">
-                    Ады
+                    <span class="name">Ады</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 30 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Adygea");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kalmykia">
-                    Калмык
+                    <span class="name">Калмык</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 31 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kalmykia");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Crimea">
-                    Крым
+                    <span class="name">Крым</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 32 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Crimea");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Krasnodar-">
-                    Кра
+                    <span class="name">Кра</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 33 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Krasnodar");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Rostov-">
-                    Рос
+                    <span class="name">Рос</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 36 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Rostov-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Astrakhan-">
-                    Аст
+                    <span class="name">Аст</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 34 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Astrakhan-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Volgograd-">
-                    Вол
+                    <span class="name">Вол</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 35 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Volgograd-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Dagestan">
-                    Даг
+                    <span class="name">Даг</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 38 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Dagestan");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Ingushetia">
-                    Инг
+                    <span class="name">Инг</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 39 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Ingushetia");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kabardino">
-                    КБР
+                    <span class="name">КБР</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 40 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kabardino");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Karachayevo">
-                    КЧР
+                    <span class="name">КЧР</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 41 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Karachayevo");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Ossetia">
-                    СОА
+                    <span class="name">СОА</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 42 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Chechen">
-                    Чеч
+                    <span class="name">Чеч</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 43 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Stavropol">
-                    Став
+                    <span class="name">Став</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 44 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Bashkortostan">
-                    Баш
+                    <span class="name">Баш</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 45 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Mordovia">
-                    Мор
+                    <span class="name">Мор</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 47 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Tatarstan">
-                    Тат
+                    <span class="name">Тат</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 48 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Udmurtia">
-                    Удм
+                    <span class="name">Удм</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 49 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Chuvash-">
-                    Чув
+                    <span class="name">Чув</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 50 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Perm-">
-                    Пер
+                    <span class="name">Пер</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 51 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kirov-">
-                    Кир
+                    <span class="name">Кир</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 52 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Nizhny">
-                    Ниж
+                    <span class="name">Ниж</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 53 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Orenburg-">
-                    Оре
+                    <span class="name">Оре</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 54 %}
+                    <span class="value">{{ i.value }}</span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="MSK">
                     <span class="name">МСК</span>
-                    <span class="value">3.342</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 18 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+<!--                            // Получаем элемент с классом "MSK"-->
+                            const mskElement = document.querySelector(".MSK");
+<!--                            // Создаем переменную для значения прозрачности-->
+                            var percent = ({{ i.value }} / {{max_mrb}});
+<!--                            // Присваиваем прозрачность фона элемента-->
+                            mskElement.style.backgroundColor = `rgba({{color}}, 0, 0, ${percent.toFixed(2)})`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="SPB">
                     <span class="name">СПБ</span>
                     {% for i in form_2 %}
                     {% if i.rg_id == 29 %}
                     <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".SPB");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
                     {% endif %}
                     {% endfor %}
                 </div>
                 <div class="Penza-">
-                    Пен
+                    <span class="name">Пен</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 55 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Penza-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Samara-">
-                    Сам
+                    <span class="name">Сам</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 56 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Samara-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Saratov-">
-                    Сар
+                    <span class="name">Сар</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 57 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Saratov-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Ulyanovsk-">
-                    Уль
+                    <span class="name">Уль</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 58 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Ulyanovsk-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kurgan-">
-                    Кур
+                    <span class="name">Кур</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 59 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kurgan-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Chelyabinsk-">
-                    Чел
+                    <span class="name">Чел</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 64 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Chelyabinsk-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Sverdlovsk">
-                    Све
+                    <span class="name">Све</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 60 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Sverdlovsk");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Tyumen">
-                    Тюм
+                    <span class="name">Тюм</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 59 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tyumen");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Khanty">
-                    Хак
+                    <span class="name">ХМАО</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 67 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khanty");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Yamal">
-                    ЯНАО
+                    <span class="name">ЯНАО</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 63 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Yamal");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Omsk-">
-                    Омск
+                    <span class="name">Омск</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 73 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Omsk-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                <div class="Altai_K">Алт край</div>
-                <div class="Altai-">Р. Алтай</div>
-                <div class="Tuva-">Тыва</div>
+                <div class="Altai_K">
+                    <span class="name">Алт</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 68 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Altai_K");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Altai-">
+                    <span class="name">Р.Алт</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 65 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Altai-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Tuva-">
+                    <span class="name">Тыва</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 66 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tuva-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
                 <div class="Khakassia-">
-                    Хак
+                    <span class="name">Хак</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 66 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khakassia-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Krasnoyarsk-">
-                    Красн
+                    <span class="name">Красн</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 69 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Krasnoyarsk-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Irkutsk-">
-                    Ирк
+                    <span class="name">Ирк</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 70 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Irkutsk-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kemerovo-">
-                    Кем
+                    <span class="name">Кем</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 71 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kemerovo-");
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Novosibirsk-">
-                    Нов
+                    <span class="name">Нов</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 72 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kemerovo-");
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Tomsk-">
-                    Том
+                    <span class="name">Том</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 74 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tomsk-");
+
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
 
                 <div class="Buryatia">
-                    Бур
+                    <span class="name">Бур</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 75 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Buryatia");
+
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Yakutia">
-                    Яку
+                    <span class="name">Яку</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 76 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Yakutia");
+
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <div class="Kamchatka-">
-                    Кам
+                    <span class="name">Кам</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 78 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kamchatka-");
+
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                <div class="Transbaika">Tra</div>
-                <div class="Primorsky-">Pri</div>
-                <div class="Khabarovsk-">Kha</div>
-                <div class="Amur-">Amur</div>
-                <div class="Magadan-">Maga</div>
-                <div class="Sakhalin-">Sak</div>
-                <div class="Jewish-">Jewish</div>
-                <div class="Chukotka-">Chu</div>
+                <div class="Transbaika">
+                    <span class="name">Заб</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 77 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Transbaika");
+
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Primorsky-">
+                    <span class="name">Прим</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 79 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Primorsky-");
+
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Khabarovsk-">
+                    <span class="name">Хаб</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 80 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khabarovsk-");
+
+
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Amur-">
+                    <span class="name">Амур</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 67 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Amur-");
+
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Magadan-">
+                    <span class="name">Маг</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 82 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Magadan-");
+
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Sakhalin-">
+                    <span class="name">Сах</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 83 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Sakhalin-");
+
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Jewish-">
+                    <span class="name">ЕАО</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 84 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Jewish-");
+
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="Chukotka-">
+                    <span class="name">Чук</span>
+                    {% for i in form_2 %}
+                    {% if i.rg_id == 85 %}
+                    <span class="value">{{ i.value }}</span>
+                    <script>
+                        updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Chukotka-");
+                    </script>
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>

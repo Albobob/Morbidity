@@ -1,1 +1,1 @@
-SQL_PATH = "sqlite:///C:/Users/trebl/Desktop/Morbid/Morbidity/database.db"
+SQL_PATH = "sqlite:///C:/Users/SimonyanAR.FCGIE/Desktop/p/Morbidity/database.db"

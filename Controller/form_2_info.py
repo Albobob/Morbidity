@@ -20,4 +20,4 @@ def get_fprm_2_info(date, name_of_diseases_id, population_group):
     return result_dict
 
 
-print(get_fprm_2_info('2009-12-20 00:00:00', 1, 1))
+

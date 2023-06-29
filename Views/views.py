@@ -24,11 +24,17 @@ def tst():
     nz = get_nz_info()
     if request.method == 'POST':
         nz_id = int(request.form['nz_id'])
-        form_2 = get_fprm_2_info('2009-12-20 00:00:00', nz_id, 1)
-        return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2)
+        form_2 = get_fprm_2_info('2018-01-01 00:00:00.000000', nz_id, 1)
+        value = []
+        for i in form_2:
+            value.append(i['value'])
+        max_mrb = max(value)
+        print(max_mrb)
+        color_value = 255
+
+        return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb)
     else:
         return render_template(f'tst.html', title='Главная', nod=nz)
-
 
 
 @app.route('/smp', methods=['GET', 'POST'])
