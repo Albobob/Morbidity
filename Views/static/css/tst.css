@@ -5,15 +5,17 @@ grid-template-columns: 2fr 1fr;
 grid-template-rows: 1fr;
 grid-column-gap: 5px;
 grid-row-gap: 0px;
-  border: 1px solid black;
+/*  border: 1px solid black;*/
 
 
 }
 
 .input{
 padding: 0px 0px 0px 0px;
-border: 1px solid red;
+/*border: 1px solid red;*/
 }
+
+H3 { text-align: center }
 
 select[name="nz_id"] {
   width: 197px;
@@ -27,7 +29,7 @@ input[type='submit']{
 
 .right{
 padding: 0px 0px 0px 100px;
-border: 1px solid Green;
+/*border: 1px solid Green;*/
 }
 
 .header {
@@ -36,7 +38,7 @@ border: 1px solid Green;
 .main {
   grid-area: main;
   display: grid;
-  border: 1px solid Blue;
+/*  border: 1px solid Blue;*/
 }
 
 .main { grid-area: 1 / 1 / 2 / 2; }

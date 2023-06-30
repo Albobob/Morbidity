@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_file, url_for
 from flask_sqlalchemy import SQLAlchemy
-from Morbidity.Controller.SMP import get_smp
+from Morbidity.Controller.SMP import get_smp, compare_value
 from Morbidity.Controller.rg_info import get_tu_info
 from Morbidity.Controller.nod_info import get_nz_info
 from Morbidity.Controller.up_down_table import get_up_down
@@ -25,7 +25,6 @@ def tst():
     current_year = datetime.datetime.now().year
     min_year = get_min_max_year()[0]
     max_year = get_min_max_year()[1]
-
     nz = get_nz_info()
     if request.method == 'POST':
         year = request.form['input_year_map']
@@ -33,14 +32,26 @@ def tst():
         nz_id = int(request.form['nz_id'])
         form_2 = get_fprm_2_info(f'{year}-01-01 00:00:00.000000', nz_id, 1)
         value = []
+        name_nz = 'Название'
+        for i in get_nz_info():
+            if i[0] == int(nz_id):
+                name_nz = i[1]
+        rf_mrb = None
 
         for i in form_2:
             value.append(i['value'])
+            if i['rg_id'] == 90:
+                rf_mrb = i['value']
+
+        smp_rf = round(get_smp(2010, 2019, nz_id, 90), 2)
+        ud = compare_value(rf_mrb, smp_rf)
+
         max_mrb = max(value)
         color_value = 255
 
         return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb,
-                               current_year=current_year, min_year=min_year, max_year=max_year)
+                               current_year=current_year, min_year=min_year, max_year=max_year, name_nz=name_nz,
+                               smp_rf=smp_rf, rf_mrb=rf_mrb, ud=ud)
     else:
         return render_template(f'tst.html', title='Главная', nod=nz, current_year=current_year, min_year=min_year,
                                max_year=max_year)

@@ -38,4 +38,23 @@ def get_smp(date_first: int, date_last: int, nz_input: int, rg_id: int) -> float
 
     return sum(result_list) / len(result_list)
 
-# print(get_smp(2010, 2019, 29, 1))
+
+def compare_value(value, smp):
+    deviation = ((value - smp) / smp) * 100
+
+    if deviation > 1:
+        if value >= smp * 1.5:
+            num_times = round(value / smp, 1)
+            return f"выше в {str(num_times).replace('.', ',')} раз"
+        else:
+            diff_percent = round(deviation)
+            return f"выше на {str(diff_percent).replace('.', ',')}%"
+    elif deviation < -1:
+        if value <= smp * 0.66:
+            num_times = round(smp / value, 1)
+            return f"ниже в {str(num_times).replace('.', ',')} раз"
+        else:
+            diff_percent = round(abs(deviation), 1)
+            return f"ниже на {str(diff_percent).replace('.', ',')}%"
+    else:
+        return "на уровне"
