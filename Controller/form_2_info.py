@@ -10,7 +10,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-def get_fprm_2_info(date, name_of_diseases_id, population_group):
+def get_fprm_2_info(date: str, name_of_diseases_id: int, population_group: int):
     result = session.query(FormTwo).filter(
         FormTwo.date == date,
         FormTwo.nod_id == name_of_diseases_id,
@@ -28,5 +28,17 @@ def get_min_max_year():
     pass
 
 
+def get_top_5_regions(year: int, nz_id: int):
+    start_date = datetime.datetime(year, 1, 1)
+    end_date = datetime.datetime(year, 12, 31)
 
-print(get_min_max_year())
+    result = session.query(FormTwo.rg_id, func.max(FormTwo.value)).filter(
+        FormTwo.date.between(start_date, end_date),
+        FormTwo.nod_id == nz_id,
+        FormTwo.type_value == 2,
+        FormTwo.pg_id == 1
+    ).group_by(FormTwo.rg_id).order_by(func.max(FormTwo.value).desc()).limit(5).all()
+
+    return result
+
+

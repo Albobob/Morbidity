@@ -4,7 +4,7 @@ from Morbidity.Controller.SMP import get_smp, compare_value
 from Morbidity.Controller.rg_info import get_tu_info
 from Morbidity.Controller.nod_info import get_nz_info
 from Morbidity.Controller.up_down_table import get_up_down
-from Morbidity.Controller.form_2_info import get_fprm_2_info, get_min_max_year
+from Morbidity.Controller.form_2_info import get_fprm_2_info, get_min_max_year, get_top_5_regions
 from Morbidity.config import SQL_PATH
 import datetime
 
@@ -45,13 +45,14 @@ def tst():
 
         smp_rf = round(get_smp(2010, 2019, nz_id, 90), 2)
         ud = compare_value(rf_mrb, smp_rf)
-
+        top_reg = get_top_5_regions(int(year), nz_id)
+        tu = get_tu_info()
         max_mrb = max(value)
         color_value = 255
 
         return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb,
                                current_year=current_year, min_year=min_year, max_year=max_year, name_nz=name_nz,
-                               smp_rf=smp_rf, rf_mrb=rf_mrb, ud=ud)
+                               smp_rf=smp_rf, rf_mrb=rf_mrb, ud=ud, top_reg=top_reg, tu=tu)
     else:
         return render_template(f'tst.html', title='Главная', nod=nz, current_year=current_year, min_year=min_year,
                                max_year=max_year)

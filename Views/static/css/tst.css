@@ -14,8 +14,7 @@ grid-row-gap: 0px;
 padding: 0px 0px 0px 0px;
 /*border: 1px solid red;*/
 }
-
-H3 { text-align: center }
+.name_nz { text-align: center }
 
 select[name="nz_id"] {
   width: 197px;

@@ -20,4 +20,4 @@ def get_tu_info():
     return result_dict
 
 
-
+print(get_tu_info())
