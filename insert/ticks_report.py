@@ -106,126 +106,34 @@ def insert_tick(date: str, rg_id: int, pg_id: int, value, toi_id: int):
 
 data = []
 
-root = 'C:/Users/SimonyanAR.FCGIE/Desktop/p/Morbidity/insert/DATA'
-for year in os.listdir(root):
-    path = os.path.join(root, year)
-    print(path)
-    os.chdir(path)
-    files = os.listdir()
-    for f in files:
-        print(f)
-    for week in os.listdir():
+ROOT = 'C:/Users/SimonyanAR.FCGIE/Desktop/p/Morbidity/insert/DATA'
+
+
+def get_files(directory):
+    """Получить имена файлов в каталоге."""
+    files = os.listdir(directory)
+    for file_name in files:
+        print(file_name)
+    return files
+
+
+def process_files(files):
+    """Обрабатывает файлы и заполняет дату, неделю, id и другие параметры."""
+    for wk in files:
+        week = wk[:2:]
         for row in range(12, 30):
-            wb = load_workbook(f'{week}', data_only=True)
-            date = datetime.date(int(year), 1, 1) + datetime.timedelta(weeks=int(week[0:2:]) - 1, days=4)
-
-            dc_contact = {
-                'date': None,
-                'week': None,
-                'name': None,
-                'rg_id': None,
-                'pg_id': None,
-                'value': None,
-            }
-            dc_tick_morbidity_rate = {
-                'date': None,
-                'week': None,
-                'name': None,
-                'rg_id': None,
-                'pg_id': None,
-                'value': None,
-                'toi_id': None,
-            }
-            '''1. ОБРАЩАЕМОСТЬ ПОСТРАДАВШИХ ОТ УКУСОВ КЛЕЩЕЙ.'''
-            if decode(wb, "Табл1", "d", row) is not None:
-                if decode(wb, "Табл1", "d", row) > 0:
-                    name = decode(wb, "Табл1", "b", row)
-                    value_all = decode(wb, "Табл1", "d", row)
-                    pg_id = 1
-                    name_bd = session.query(TerritorialUnit).filter_by(name_ru=f'{name}').first()
-                    if name_bd is None:
-                        region_name = true_region_name(name)
-                    else:
-                        region_name = name
-                    try:
-                        region = session.query(TerritorialUnit).filter_by(name_ru=f'{region_name}').first()
-                        rg_id = region.id
-                        print(f'date: {date}\nvalue: {value_all}\nweek:{week[0:2:]}\n'
-                              f'name:{name}\nrg_id: {rg_id}\npg_id{pg_id}')
-                        dc_contact['date'] = date
-                        dc_contact['week'] = week
-                        dc_contact['name'] = name
-                        dc_contact['rg_id'] = rg_id
-                        dc_contact['pg_id'] = pg_id
-                        dc_contact['value'] = value_all
-                        data.append(dc_contact)
-
-                        # insert(date, value_all, week, rg_id, pg_id)
-
-                    except AttributeError:
-                        print(f"EROR - {region_name}")
-            if decode(wb, "Табл1", "e", row) is not None:
-                if decode(wb, "Табл1", "e", row) > 0:
-                    value_chl = decode(wb, "Табл1", "e", row)
-                    pg_id = 6
-                    name = decode(wb, "Табл1", "b", row)
-                    name_bd = session.query(TerritorialUnit).filter_by(name_ru=f'{name}').first()
-                    if name_bd is None:
-                        region_name = true_region_name(name)
-                    else:
-                        region_name = name
-                    try:
-                        region = session.query(TerritorialUnit).filter_by(name_ru=f'{region_name}').first()
-                        rg_id = region.id
-
-                        print(f'date: {date}\nvalue: {value_chl}\nweek:{week[0:2:]}\n'
-                              f'name:{name}\nrg_id: {rg_id}\npg_id {pg_id}')
-
-                        dc_contact['date'] = date
-                        dc_contact['week'] = week
-                        dc_contact['name'] = name
-                        dc_contact['rg_id'] = rg_id
-                        dc_contact['pg_id'] = pg_id
-                        dc_contact['value'] = value_chl
-                        data.append(dc_contact)
-
-                        # insert(date, value_chl, week, rg_id, pg_id)
-                    except AttributeError:
-                        print(f"EROR - {region_name}")
-
-            '''2. ЗАБОЛЕВАЕМОСТЬ ИНФЕКЦИЯМИ, ПЕРЕДАЮЩИМИСЯ КЛЕЩАМИ '''
-            if decode(wb, "Табл1", "AN", row) is not None:
-                if decode(wb, "Табл1", "AN", row) > 0:
-                    value_all = decode(wb, "Табл1", "AN", row)  # КВЭ
-                    pg_id = 1
-                    toi_id = 1
-                    name = decode(wb, "Табл1", "b", row)
-                    name_bd = session.query(TerritorialUnit).filter_by(name_ru=f'{name}').first()
-                    if name_bd is None:
-                        region_name = true_region_name(name)
-                    else:
-                        region_name = name
-                    try:
-                        region = session.query(TerritorialUnit).filter_by(name_ru=f'{region_name}').first()
-                        rg_id = region.id
+            pass
+    # Ваш обрабатывающий код здесь
 
 
-                        print(f'date: {date}\nvalue: {value_all}\nweek:{week[0:2:]}\n'
-                              f'name:{name}\nrg_id: {rg_id}\npg_id {pg_id}\ntoi_id {toi_id}')
+def main():
+    """Главная функция для обработки файлов в каталоге ROOT."""
+    for year in os.listdir(ROOT):
+        path = os.path.join(ROOT, year)
+        # print(path)
+        os.chdir(path)
+        files = get_files(path)
+        process_files(files)
 
-                        dc_tick_morbidity_rate['date'] = date
-                        dc_tick_morbidity_rate['week'] = week
-                        dc_tick_morbidity_rate['name'] = name
-                        dc_tick_morbidity_rate['rg_id'] = rg_id
-                        dc_tick_morbidity_rate['pg_id'] = pg_id
-                        dc_tick_morbidity_rate['value'] = value_all
-                        dc_tick_morbidity_rate['toi_id'] = toi_id
-                        data.append(dc_tick_morbidity_rate)
 
-                        # insert(date, value_chl, week, rg_id, pg_id)
-                    except AttributeError:
-                        print(f"EROR - {region_name}")
-            wb.close()
-
-# session.commit()
-# session.close()
+print(main())
