@@ -10,6 +10,8 @@ from Morbidity.models.territorial_unit import TerritorialUnit
 from Morbidity.models.district import District
 from Morbidity.models.rus_total import RusTotal
 from Morbidity.models.geo_category import GeoCategory
+from Morbidity.models.form.name_of_diseases import NameOfDiseases
+
 from Morbidity.models.base import Base
 
 from Morbidity.models.report.ticks.tick_morbidity_rate import TickMorbidityRate
@@ -65,8 +67,8 @@ def insert_contacted(date, value, week: int, rg_id: int, pg_id: int):
     session.add(Contacted(date, rg_id, pg_id, value, week))
 
 
-def insert_tick(date, rg_id: int, pg_id: int, value, toi_id: int, nod_id: int):
-    session.add(TickMorbidityRate(date, rg_id, pg_id, value, toi_id, nod_id))
+def insert_tick(date, week, rg_id: int, pg_id: int, value, toi_id: int, nod_id: int):
+    session.add(TickMorbidityRate(date, week, rg_id, pg_id, value, toi_id, nod_id))
     pass
 
 
@@ -106,8 +108,9 @@ def process_files(year: int, files, field: str, pg_id: int, toi_id, nod_id):
                               f'name:{name}\nrg_id: {rg_id}\npg_id {pg_id}\ntoi_id {toi_id}')
                     elif field in ('AN', 'AO', 'AS', 'AT', 'BK', 'BL', 'BN', 'BO', 'BQ', 'BR'):
                         print('insert_tick')
-                        insert_tick(date, rg_id, pg_id, value, toi_id, nod_id)
+                        insert_tick(date, week, rg_id, pg_id, value, toi_id, nod_id)
                     wb.close()
+
                 except AttributeError:
                     wb.close()
                     print(f"EROR - {region_name}")
@@ -121,8 +124,8 @@ def main():
         os.chdir(path)
         files = get_files(path)
         '''1. ОБРАЩАЕМОСТЬ ПОСТРАДАВШИХ ОТ УКУСОВ КЛЕЩЕЙ.'''
-        process_files(int(year), files, 'D', 1, None, None)
-        process_files(int(year), files, 'E', 6, None, None)
+        # process_files(int(year), files, 'D', 1, None, None)
+        # process_files(int(year), files, 'E', 6, None, None)
         '''2. ЗАБОЛЕВАЕМОСТЬ ИНФЕКЦИЯМИ, ПЕРЕДАЮЩИМИСЯ КЛЕЩАМИ '''
         process_files(int(year), files, 'AN', 1, 1, 113)  # Взрослые трансмиссивным путем
         process_files(int(year), files, 'AO', 6, 1, 113)  # Дети трансмиссивным путем
@@ -134,6 +137,8 @@ def main():
         process_files(int(year), files, 'BO', 6, None, 111)  # МЭЧ
         process_files(int(year), files, 'BQ', 1, None, 112)  # ГАЧ
         process_files(int(year), files, 'BR', 6, None, 112)  # ГАЧ
+        session.commit()
+        session.close()
 
 
 print(main())

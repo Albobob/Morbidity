@@ -65,6 +65,9 @@ padding: 0px 0px 0px 100px;
   grid-area: spaces;
 }
 
+
+
+
 .Kaliningrad { 
     grid-area: Kaliningrad;
     display: grid;
@@ -1031,4 +1034,23 @@ padding: 0px 0px 0px 100px;
 
 /*    border: 1px solid red;*/
 
+
+
+.spaces div.T:nth-child(1n+1) {
+  grid-area: T;
+  display: grid;
+  border: 0px solid red;
+
 }
+
+
+
+p {
+    text-indent: 25px;
+}
+
+li {
+    line-height: 1.5; /* Межстрочное расстояние */
+}
+.text
+

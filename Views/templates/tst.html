@@ -18,7 +18,19 @@
 				                 myElement.style.backgroundColor = `rgba(${color}, 0, 0, ${percent.toFixed(2)})`;
 				               }
 
-</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                </script>
                 <div class="Kaliningrad" title="Калининградская область">
 
                     {% for i in form_2 %}
@@ -116,7 +128,7 @@
                 </div>
                 <div class="Kaluga" title="Калужская область"><span class="name">Кал</span>
                     {% for i in form_2 %} {% if i.rg_id == 6 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kaluga"); </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -128,7 +140,7 @@
                 </div>
                 <div class="Kursk" title="Курская область"><span class="name">Кур</span>
                     {% for i in form_2 %} {% if i.rg_id == 8 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script>updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kursk"); </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -145,7 +157,7 @@
                 </div>
                 <div class="MO" title="Московская область"><span class="name">М.обл</span>
                     {% for i in form_2 %} {% if i.rg_id == 10 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".MO"); </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -157,31 +169,31 @@
                 </div>
                 <div class="Lipetsk" title="Липецкая область"><span class="name">Лип</span>
                     {% for i in form_2 %} {% if i.rg_id == 9 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Lipetsk");  </script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Belgorod" title="Белгородская область"><span class="name">Бел</span>
                     {% for i in form_2 %} {% if i.rg_id == 1 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Belgorod");  </script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Voronezh" title="Воронежская область"><span class="name">Вор</span>
                     {% for i in form_2 %} {% if i.rg_id == 4 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Voronezh"); </script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Tambov" title="Тамбовская область"><span class="name">Там</span>
                     {% for i in form_2 %} {% if i.rg_id == 14 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tambov"); </script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Ryazan" title="Рязанская область"><span class="name">Ряз</span>
                     {% for i in form_2 %} {% if i.rg_id == 12 %} <span
-                        class="value">{{ i.value }}</span>
+                            class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Ryazan"); </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -227,7 +239,7 @@
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Astrakhan-" title="Астраханская область">
-                     <span class="name">Аст</span>
+                    <span class="name">Аст</span>
                     {% for i in form_2 %} {% if i.rg_id == 34 %}
                     <span class="value">{{ i.value }}</span>
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Astrakhan-");  </script>
@@ -316,7 +328,7 @@
                 <div class="Perm-" title="Пермский край">
                     <span class="name">Пер</span> {% for i in form_2 %} {% if i.rg_id == 51 %} <span
                         class="value">{{ i.value }}</span>
-                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Perm-"); </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Perm-"); </script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Kirov-" title="Кировская область">
@@ -339,9 +351,11 @@
                 </div>
                 <div class="MSK"><span class="name">МСК</span> {% for i in form_2 %} {% if i.rg_id == 18 %} <span
                         class="value">{{ i.value }}</span>
-                   <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".MSK"); </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".MSK"); </script>
                     {% endif %} {% endfor %}
                 </div>
+
+
                 <div class="SPB" title="г. Санкт-Петербург">
                     <span class="name">СПБ</span> {% for i in form_2 %} {% if i.rg_id == 29 %} <span
                         class="value">{{ i.value }}</span>
@@ -354,7 +368,8 @@
                     <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Penza-"); </script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Samara-"><span class="name">Сам</span> {% for i in form_2 %} {% if i.rg_id == 56 %} <span
+                <div class="Samara-" title="Самарская область">
+                    <span class="name">Сам</span> {% for i in form_2 %} {% if i.rg_id == 56 %} <span
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Samara-");
@@ -369,44 +384,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Saratov-"><span class="name">Сар</span> {% for i in form_2 %} {% if i.rg_id == 57 %} <span
+                <div class="Saratov-" title="Саратовская область">
+                    <span class="name">Сар</span> {% for i in form_2 %} {% if i.rg_id == 57 %} <span
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Saratov-");
@@ -421,44 +403,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Ulyanovsk-"><span class="name">Уль</span> {% for i in form_2 %} {% if i.rg_id == 58 %} <span
+                <div class="Ulyanovsk-" title="Ульяновская область">
+                    <span class="name">Уль</span> {% for i in form_2 %} {% if i.rg_id == 58 %} <span
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Ulyanovsk-");
@@ -473,307 +422,55 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Kurgan-"><span class="name">Кур</span> {% for i in form_2 %} {% if i.rg_id == 59 %} <span
+                <div class="Kurgan-" title="Курганская область">
+                    <span class="name">Кур</span> {% for i in form_2 %} {% if i.rg_id == 59 %} <span
                         class="value">{{ i.value }}</span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kurgan-");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kurgan-");</script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Chelyabinsk-"><span class="name">Чел</span> {% for i in form_2 %} {% if i.rg_id == 64 %}
+                <div class="Chelyabinsk-" title="Челябинская область">
+                    <span class="name">Чел</span> {% for i in form_2 %} {% if i.rg_id == 64 %}
                     <span class="value">{{ i.value }}</span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Chelyabinsk-");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Chelyabinsk-");м</script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Sverdlovsk"><span class="name">Све</span> {% for i in form_2 %} {% if i.rg_id == 60 %} <span
+                <div class="Sverdlovsk" title="Свердловская область">
+                    <span class="name">Све</span> {% for i in form_2 %} {% if i.rg_id == 60 %} <span
                         class="value">{{ i.value }}</span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Sverdlovsk");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Sverdlovsk"); </script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Tyumen"><span class="name">Тюм</span> {% for i in form_2 %} {% if i.rg_id == 59 %} <span
+                <div class="Tyumen" title="Тюменская область">
+                    <span class="name">Тюм</span> {% for i in form_2 %} {% if i.rg_id == 61 %} <span
                         class="value">{{ i.value }}</span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tyumen");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tyumen");</script>
                     {% endif %} {% endfor %}
                 </div>
-                <div class="Khanty"><span class="name">ХМАО</span> {% for i in form_2 %} {% if i.rg_id == 67 %} <span
+                <div class="Khanty" title="Ханты-Мансийский автономный округ — Югра">
+                    <span class="name">ХМАО</span> {% for i in form_2 %} {% if i.rg_id == 62 %} <span
                         class="value">{{ i.value }}</span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khanty");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khanty"); </script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Yamal"><span class="name">ЯНАО</span> {% for i in form_2 %} {% if i.rg_id == 63 %} <span
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Yamal");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -871,6 +568,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -878,6 +587,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Altai_K");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -975,6 +696,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -982,6 +715,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tuva-");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1079,6 +824,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1086,6 +843,18 @@
                     <span class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Krasnoyarsk-");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1183,6 +952,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1190,6 +971,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kemerovo-");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1287,6 +1080,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1294,6 +1099,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Tomsk-");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1391,6 +1208,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1398,6 +1227,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Yakutia");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1495,6 +1336,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1502,6 +1355,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Transbaika");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1599,6 +1464,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1606,6 +1483,18 @@
                     <span class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khabarovsk-");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1686,6 +1575,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1693,6 +1594,18 @@
                         class="value">{{ i.value }}</span>
                     <script>
 					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Magadan-");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1773,6 +1686,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                     </script>
                     {% endif %} {% endfor %}
                 </div>
@@ -1783,73 +1708,18 @@
                     <span class="value">
                         {{ i.value }}
                     </span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Jewish-");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script>updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Jewish-");</script>
                     {% endif %} {% endfor %}
                 </div>
                 <div class="Chukotka-"><span class="name">Чук</span>
                     {% for i in form_2 %}
                     {% if i.rg_id == 85 %}
                     <span class="value">{{ i.value }}</span>
-                    <script>
-					updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Chukotka-");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </script>
+                    <script>updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Chukotka-");</script>
                     {% endif %} {% endfor %}
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -1867,25 +1737,42 @@
                     <input type="number" name="input_year_map" min="{{min_year}}" max="{{max_year}}" step="1"
                            value="{{ current_year }}"/>
                 </div>
-                <input type="submit" value="Ввести">
+                <input type="submit" id="copyButton" value="Ввести">
+                <script>document.getElementById("copyButton").addEventListener("click", function() {
+    var textToCopy = document.querySelector(".text").innerText;
+
+    var textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+
+    textarea.select();
+    document.execCommand("copy");
+
+    document.body.removeChild(textarea);
+
+});
+                </script>
             </form>
         </div>
-
-        <p>Заболеваемость {{name_nz}} в Российской Федерации в {{current_year}} году составила {{rf_mrb}}
-            на 100 тыс. населения, что в сравнении с СМП({{smp_rf}}) {{ud}}</p>
-
-        <p>
-            Наиболее высокая заболеваемость в {{current_year}} г. выявлена в:
-            {% for itm in top_reg %}
-            {% for rg in tu %}
-            {% if rg.id == itm[0] %}
-            {{rg.name_ru}} ({{(itm[1])}});
-            <br>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-        </p>
+        <div class="text">
+            <p>Заболеваемость {{name_nz}} в Российской Федерации в {{current_year}} году составила
+                {{rf_mrb}}
+                на 100 тыс. населения, что в сравнении с СМП({{smp_rf}}) {{ud}}</p>
+            <p>
+                Наиболее высокая заболеваемость в {{current_year}} г. выявлена в:
+            <ol>
+                {% for itm in top_reg %}
+                {% for rg in tu %}
+                {% if rg.id == itm[0] %}
+                <li>{{rg.name_ru}} ({{(itm[1])}});</li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </ol>
+            </p>
+        </div>
     </div>
+
 </div> {% endblock content %}
 
 
