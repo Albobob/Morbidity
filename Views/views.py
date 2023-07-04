@@ -48,7 +48,7 @@ def tst():
         top_reg = get_top_5_regions(int(year), nz_id)
         tu = get_tu_info()
         max_mrb = max(value)
-        color_value = 255
+        color_value = 198
 
         return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb,
                                current_year=current_year, min_year=min_year, max_year=max_year, name_nz=name_nz,

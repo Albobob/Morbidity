@@ -17,23 +17,27 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 '''ИМПОРТИРУЕМ МОДЕЛИ '''
 # География
-from models.geo_category import GeoCategory
-from models.rus_total import RusTotal
-from models.district import District
-from models.territorial_unit import TerritorialUnit
+from Morbidity.models.geo_category import GeoCategory
+from Morbidity.models.rus_total import RusTotal
+from Morbidity.models.district import District
+from Morbidity.models.territorial_unit import TerritorialUnit
 # Показатели
-from models.population_group import PopulationGroup
-from models.type_value import TypeValue
+from Morbidity.models.population_group import PopulationGroup
+from Morbidity.models.type_value import TypeValue
 # Форма №1
-from models.form.form_1 import FormOne
-from models.form.form_2 import FormTwo
-from models.form.name_of_diseases import NameOfDiseases
+from Morbidity.models.form.form_1 import FormOne
+from Morbidity.models.form.form_2 import FormTwo
+from Morbidity.models.form.name_of_diseases import NameOfDiseases
 # Отчеты
-from models.report.measles_immunization_report.vaccinated_measles import VaccinatedMeasles
+from Morbidity.models.report.measles_immunization_report.vaccinated_measles import VaccinatedMeasles
+# Клещи
+from Morbidity.models.transmission_of_infection import TransmissionOfInfection
+from Morbidity.models.report.ticks.tick_morbidity_rate import TickMorbidityRate
+from Morbidity.models.report.ticks.contacted import Contacted
 
 '''ИМПОРТИРУЕМ МОДЕЛИ '''
 
-from models.base import Base
+from Morbidity.models.base import Base
 
 target_metadata = Base.metadata
 

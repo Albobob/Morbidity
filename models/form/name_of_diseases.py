@@ -7,6 +7,7 @@ class NameOfDiseases(Base):
     __tablename__ = 'name_of_diseases'
     id = Column(Integer, primary_key=True)
     name = Column(String(100), nullable=False)
+    short_name = Column(String(50))
     num_form = Column(Integer, nullable=False)
     krista_id = Column(String(15))
     comment = Column(String(250))
