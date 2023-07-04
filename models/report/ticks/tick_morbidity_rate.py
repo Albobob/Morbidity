@@ -16,18 +16,19 @@ class TickMorbidityRate(Base):
     pg_id = Column(Integer, ForeignKey('population_group.id'), nullable=False)
     relationship('PopulationGroup', backref='tick_morbidity_rate')
 
-    toi_id = Column(Integer, ForeignKey('transmission_of_infection.id'), nullable=False)
+    toi_id = Column(Integer, ForeignKey('transmission_of_infection.id'), nullable=True)
     relationship('TransmissionOfInfection', backref='tick_morbidity_rate')
 
     nod_id = Column(Integer, ForeignKey('transmission_of_infection.id'), nullable=False)
     relationship('NameOfDiseases', backref='tick_morbidity_rate')
 
-    def __init__(self, date, rg_id, population_group, value, transmission_of_infection):
+    def __init__(self, date, rg_id, population_group, value, transmission_of_infection, nod_id):
         self.date = date
         self.rg_id = rg_id
         self.pg_id = population_group
         self.value = value
         self.toi_id = transmission_of_infection
+        self.nod_id = nod_id
 
     def to_dict(self):
         return {
@@ -37,4 +38,5 @@ class TickMorbidityRate(Base):
             'pg_id': self.pg_id,
             'value': self.value,
             'toi_id': self.toi_id,
+            'nod_id': self.nod_id,
         }
