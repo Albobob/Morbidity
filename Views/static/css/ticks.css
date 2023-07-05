@@ -1,0 +1,11 @@
+.text_wrapper {
+    width: 500px;
+    margin: 30px;
+  /*  overflow: hidden;*/
+    }
+.input{margin: 30px;}
+input[type='number']{
+    width: 50px;
+}
+/*
+body { background-color: red; }*/

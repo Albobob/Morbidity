@@ -4,7 +4,7 @@ from Morbidity.Controller.SMP import get_smp, compare_value
 from Morbidity.Controller.rg_info import get_tu_info
 from Morbidity.Controller.nod_info import get_nz_info
 from Morbidity.Controller.up_down_table import get_up_down
-from Morbidity.Controller.form_2_info import get_fprm_2_info, get_min_max_year, get_top_5_regions
+from Morbidity.Controller.form_2_info import get_fprm_2_info, get_min_max_year, get_top_5_regions, get_down_5_regions
 from Morbidity.config import SQL_PATH
 import datetime
 
@@ -20,6 +20,23 @@ def home():
     return render_template(f'index.html', title='Главная')
 
 
+@app.route('/ticks', methods=['GET', 'POST'])
+def ticks():
+    if request.method == 'POST':
+
+        date_now = datetime.datetime.now().strftime("%d.%m.%Y")
+        current_week = datetime.datetime.now().weekday()
+        print(current_week)
+        current_year = datetime.datetime.now().year
+        week = int(request.form['input_week'])
+        date = datetime.date(current_year, 1, 1) + datetime.timedelta(weeks=week - 1, days=4)
+
+
+        return render_template(f'ticks.html', title='Клещи', current_week=current_week, date_now=date_now)
+    else:
+        return render_template(f'ticks.html', title='Клещи')
+
+
 @app.route('/tst', methods=['GET', 'POST'])
 def tst():
     current_year = datetime.datetime.now().year
@@ -32,7 +49,7 @@ def tst():
         nz_id = int(request.form['nz_id'])
         form_2 = get_fprm_2_info(f'{year}-01-01 00:00:00.000000', nz_id, 1)
         value = []
-        name_nz = 'Название'
+        name_nz = 'Название нозологии'
         for i in get_nz_info():
             if i[0] == int(nz_id):
                 name_nz = i[1]
@@ -46,13 +63,14 @@ def tst():
         smp_rf = round(get_smp(2010, 2019, nz_id, 90), 2)
         ud = compare_value(rf_mrb, smp_rf)
         top_reg = get_top_5_regions(int(year), nz_id)
+        down_reg = get_down_5_regions(int(year), nz_id)
         tu = get_tu_info()
         max_mrb = max(value)
         color_value = 198
 
         return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb,
                                current_year=current_year, min_year=min_year, max_year=max_year, name_nz=name_nz,
-                               smp_rf=smp_rf, rf_mrb=rf_mrb, ud=ud, top_reg=top_reg, tu=tu)
+                               smp_rf=smp_rf, rf_mrb=rf_mrb, ud=ud, top_reg=top_reg, tu=tu, down_reg=down_reg)
     else:
         return render_template(f'tst.html', title='Главная', nod=nz, current_year=current_year, min_year=min_year,
                                max_year=max_year)

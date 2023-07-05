@@ -3,11 +3,12 @@ html{
 }
 
 body {
-  font: normal 16px/100% "Andale Mono", AndaleMono, monospace;
-  color: #fff;
+ /* font: normal 16px/100% "Andale Mono", AndaleMono, monospace;*/
+  font: normal 16px/100% "Arial";
+  color: #black;
   padding: 5px;
   margin: 0 auto;
-  background-color: #374954;
+  background-color: #f6f6f8;
 }
 
 select{
@@ -16,7 +17,7 @@ select{
 
 
 a {
-  color: #fff;
+  color: black;
 }
 
 li{
@@ -24,7 +25,7 @@ li{
 }
 
 .header{
-border-bottom: 1px solid white;
+border-bottom: 1px solid black;
 }
 
 .header_content{

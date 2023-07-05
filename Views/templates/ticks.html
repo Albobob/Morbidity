@@ -1,0 +1,67 @@
+{% extends  'base.html'%}
+{% block head %}
+<link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/ticks.css') }}">
+{% endblock head %}
+{% block content %}
+<div class="input">
+    <form action="{{ url_for('ticks') }}" method="POST">
+        <div class='input_year'>
+            Введите год:
+            <input
+                    type="number"
+                    name="input_year_map"
+                    min="{{min_year}}"
+                    max="{{max_year}}" step="1"
+                    value="{{ current_year }}"/>
+        </div>
+        <div class="input_week">
+            Введите номер недели:
+            <input
+                    type="number"
+                    name="input_week"
+                    min="1"
+                    max="52" step="1"
+                    value="{{ current_week }}"/>
+
+        </div>
+         <input
+                    type="submit"
+                    id="copyButton"
+                    value="Ввести">
+
+        <script>document.getElementById("copyButton").addEventListener("click", function() {
+    var textToCopy = document.querySelector(".text").innerText;
+
+    var textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+
+    textarea.select();
+    document.execCommand("copy");
+
+    document.body.removeChild(textarea);
+
+});
+
+
+        </script>
+
+    </form>
+</div>
+
+<div class="text_wrapper">
+    <div class="text">
+        <p>1. Обращаемость пострадавших от укусов клещей.</p>
+        <p>По данным оперативного еженедельного мониторинга на {{ date_now }} в 86 субъектах Российской Федерации в
+            медицинские организации обратились 185211 пострадавших от укусов клещей (в 2022– в 82 субъекте, 174664
+            человека),
+            в том числе 47174 детей.</p>
+        <p>Обращаемость пострадавших от укусов клещей выше среднемноголетнего значения (СМП – 179947) на 2,8 %. Ежегодно
+            в
+            аналогичный период обращались в медицинские организации от 141096 до 219993 пострадавших от укусов клещей.
+            За 22 неделю обратились в медицинские организации 43724 пострадавших от укусов клещей.
+        </p>
+    </div>
+</div>
+{% endblock content %}

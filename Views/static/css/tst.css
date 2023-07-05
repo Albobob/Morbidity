@@ -7,29 +7,40 @@
 
 .name_nz { grid-area: 1 / 1 / 2 / 10; }
 
-.input { grid-area: 2 / 7 / 4 / 10; }
+.input {
+        grid-area: 2 / 7 / 4 / 10;
+        display: flex;
+        justify-content: center;
+        /*border: 1px solid;*/
+        align-items: center;
+        }
 
 .map_wrapper {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+  gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". MSK . . Murmansk . . . . . . . . . . . . . . ."
-    ". SPB . . Karelia . . . . . Nenets . . . . . . Chukotka Kamchatka ."
+    ". . . . Murmansk . . . . . . . . . . . . . . ."
+    ". . . Karelia . . . . . . Nenets . . . . . . Chukotka Kamchatka ."
     ". . Len_obl Novgorod Vologda . . . Arkhangelsk Komi Yamal . . Krasnoyarsk . Yakutia Magadan . . ."
     "Kaliningrad . Pskov Tver Yaroslavl Ivanovo Kostroma Mariel Kirov Perm Khanty Tyumen Tomsk Kemerovo Irkutsk Amur Khabarovsk Sakhalin . ."
     ". . Smolensk Kaluga MO Vladimir Nizhny Chuvash Tatarstan Udmurtia Sverdlovsk Kurgan Novosibirsk Khakassia Buryatia Jewish . . . ."
     ". . Brynsk Orel Tula Ryazan Mordovia Ulyanovsk Samara Bashkortostan Chelyabinsk Omsk Altai_K Tuva Transbaika . Primorsky . . ."
     ". . . Kursk Lipetsk Tambov Penza Saratov Orenburg . . . Altai . . . . . . ."
     ". . . . Belgorod Voronezh Volgograd . . . . . . . . . . . . ."
-    ". . Crimea . Adygea Krasnodar Rostov Kalmykia Astrakhan . . . . . . . . . . ."
-    ". . . . Karachayevo Stavropol Chechen Dagestan . . . . . . . . . . . ."
-    ". . . . Kabardino Ossetia Ingushetia . . . . . . . . . . . . .";
+    ". . Crimea Adygea Krasnodar Rostov Kalmykia Astrakhan . . . MSK . . . . . . . ."
+        ". . . . Karachayevo Stavropol Chechen Dagestan . . . SPB . . . . . . . ."
+    ". . . . Kabardino Ossetia Ingushetia . . . . Sevastopol . . . . . . . .";
   grid-area: 2 / 1 / 10 / 7;
 }
 
 .text { grid-area: 7 / 5 / 10 / 10; }
+.text {display: grid;
+width: 40vw;
+
+
+}
 
 .top {  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -46,9 +57,27 @@
 .down { grid-area: down; }
 
 
+select[name="nz_id"] {
+  width: 197px;
+}
+input[type='number']{
+    width: 190px;
+}
+input[type='submit']{
+    width: 197px;
+}
 
+.Sevastopol {
+    grid-area: Sevastopol;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
 
-
+}
 
 .Kaliningrad { 
     grid-area: Kaliningrad;
@@ -1015,6 +1044,7 @@
 
 p {
     text-indent: 25px;
+    line-height: 1;
 }
 
 li {
