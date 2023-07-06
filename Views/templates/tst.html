@@ -121,6 +121,13 @@
 
 
 
+
+
+
+
+
+
+
             </script>
         </form>
     </div>
@@ -132,7 +139,8 @@
 				                 var percent = value / max_mrb;
 				                 myElement.style.backgroundColor = `rgba(${color}, 0, 0, ${percent.toFixed(2)})`;
 				               }
-</script>
+
+        </script>
         <div class="MSK">
             <span class="name" title="г. Москва">МСК</span>
             {% for i in form_2 %}
@@ -262,9 +270,9 @@
             {% endfor %}
         </div>
         <div class="Kaliningrad" title="Калининградская область">
+            <span class="name">Калин</span>
             {% for i in form_2 %}
             {% if i.rg_id == 24 %}
-            <span class="name">Калин</span>
             <span class="value">{{ i.value }}</span>
             <script>updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Kaliningrad");</script>
             {% endif %}
@@ -401,9 +409,10 @@
             {% for i in form_2 %}
             {% if i.rg_id == 80 %}
             <span class="value">{{ i.value }}</span>
-            <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khabarovsk");>  </script>
+            <script> updateColor({{ i.value }}, {{ max_mrb }}, "{{ color }}", ".Khabarovsk"); </script>
             {% endif %}
             {% endfor %}
+
         </div>
         <div class="Sakhalin" title="Сахалинская область">
             <span class="name">Сах</span>
@@ -825,10 +834,10 @@
         <p>
             Наиболее высокая заболеваемость в {{current_year}} г. выявлена в:</p>
         <ol>
-            {% for itm in top_reg %}
+            {% for itm in top_reg_list %}
             {% for rg in tu %}
             {% if rg.id == itm[0] %}
-            <li>{{rg.name_ru}} ({{(itm[1])}});</li>
+            <li>{{rg.name_ru}} ({{(itm[1])}}, что в сравнении с СМП({{itm[2]}}) {{itm[3]}}));</li>
             {% endif %}
             {% endfor %}
             {% endfor %}
@@ -836,27 +845,34 @@
 
     </div>
     <div class="top">
-        <div class="up">
-            <ol>
-                {% for itm in top_reg %}
-                {% for rg in tu %}
-                {% if rg.id == itm[0] %}
-                <li>{{rg.name_ru}} ({{(itm[1])}});</li>
-                {% endif %}
-                {% endfor %}
-                {% endfor %}
-            </ol>
+
+        <div class="up" title="Первые 5 регионов по заболеваемости">
+            <div class="up_txt"></div>
+            <div class="up_list">
+                <ol>
+                    {% for itm in top_reg %}
+                    {% for rg in tu %}
+                    {% if rg.id == itm[0] %}
+                    <li>{{rg.name_ru}} ({{(itm[1])}});</li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </ol>
+            </div>
         </div>
-        <div class="down">
-            <ol>
-                {% for itm in down_reg %}
-                {% for rg in tu %}
-                {% if rg.id == itm[0] %}
-                <li>{{rg.name_ru}} ({{(itm[1])}});</li>
-                {% endif %}
-                {% endfor %}
-                {% endfor %}
-            </ol>
+        <div class="down" title="Последние 5 регионов по заболеваемости">
+            <div class="down_txt"></div>
+            <div class="down_list">
+                <ol>
+                    {% for itm in down_reg %}
+                    {% for rg in tu %}
+                    {% if rg.id == itm[0] %}
+                    <li>{{rg.name_ru}} ({{(itm[1])}});</li>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </ol>
+            </div>
         </div>
     </div>
 </div>

@@ -33,3 +33,5 @@ class Contacted(Base):
             'value': self.value,
             'week': self.week
         }
+
+

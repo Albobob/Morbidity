@@ -11,8 +11,9 @@
         grid-area: 2 / 7 / 4 / 10;
         display: flex;
         justify-content: center;
-        /*border: 1px solid;*/
         align-items: center;
+        border: 1px solid #ccc;;
+        background: #eee;
         }
 
 .map_wrapper {  display: grid;
@@ -38,7 +39,7 @@
 .text { grid-area: 7 / 5 / 10 / 10; }
 .text {display: grid;
 width: 40vw;
-
+/*border: 1px solid;*/
 
 }
 
@@ -50,12 +51,47 @@ width: 40vw;
   grid-template-areas:
     "up up down down";
   grid-area: 4 / 7 / 7 / 10;
+/*   border: 1px solid;*/
 }
 
-.up { grid-area: up; }
+.up {
+    grid-area: up;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-.down { grid-area: down; }
+.down {
+    grid-area: down;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
 
+
+.down_txt{
+width: 15px;
+height: 15px;
+border-top: 5px solid #0081AF !important;
+border-right: 5px solid #0081AF !important;
+margin: 5px 0 0 5px;
+transform: rotate(135deg);
+display: inline-block;
+transition: 1s;
+
+    }
+.up_txt{
+width: 15px;
+height: 15px;
+border-top: 5px solid #BA2121 !important;
+border-right: 5px solid #BA2121 !important;
+margin: 5px 0 0 5px;
+transform: rotate(-45deg);
+display: inline-block;
+transition: 1s;
+ }
 
 select[name="nz_id"] {
   width: 197px;
@@ -1044,9 +1080,16 @@ input[type='submit']{
 
 p {
     text-indent: 25px;
-    line-height: 1;
+    line-height: normal;
+    /*border: 1px solid green;*/
+    margin: 5px;
 }
 
 li {
-    line-height: 1.5; /* Межстрочное расстояние */
+    line-height: normal; /* Межстрочное расстояние */
 }
+
+/*
+body {
+  line-height:normal;
+}*/

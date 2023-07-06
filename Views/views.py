@@ -5,6 +5,10 @@ from Morbidity.Controller.rg_info import get_tu_info
 from Morbidity.Controller.nod_info import get_nz_info
 from Morbidity.Controller.up_down_table import get_up_down
 from Morbidity.Controller.form_2_info import get_fprm_2_info, get_min_max_year, get_top_5_regions, get_down_5_regions
+from Morbidity.Controller.ticks_info import contacted_sum_total, get_min_max_year_week, get_rg_ids, get_average_value, \
+    get_min_max_value
+
+()
 from Morbidity.config import SQL_PATH
 import datetime
 
@@ -22,19 +26,63 @@ def home():
 
 @app.route('/ticks', methods=['GET', 'POST'])
 def ticks():
+    min_max = get_min_max_year_week()
+    current_week = datetime.date.today().isocalendar()[1]
+    date_now = datetime.datetime.now().strftime("%d.%m.%Y")
+    current_year = datetime.datetime.now().year
+
     if request.method == 'POST':
-
-        date_now = datetime.datetime.now().strftime("%d.%m.%Y")
-        current_week = datetime.datetime.now().weekday()
-        print(current_week)
-        current_year = datetime.datetime.now().year
         week = int(request.form['input_week'])
-        date = datetime.date(current_year, 1, 1) + datetime.timedelta(weeks=week - 1, days=4)
+        year = int(request.form['input_year'])
+        current_week = week
+        current_year = year
+        previous_year = year - 1
+        contacted_date = contacted_sum_total(year, week, 1)['current_date']
+        contacted_current = contacted_sum_total(year, week, 1)['current_value']
+        contacted_current_chl = contacted_sum_total(year, week, 6)['current_value']  # Дети
+        contacted_previous = contacted_sum_total(year, week, 1)['previous_value']
 
+        current_rg_ids = get_rg_ids(year, week)['current_rg_ids']
+        previous_rg_ids = get_rg_ids(year, week)['previous_rg_ids']
+        average_value = get_average_value(min_max[0], year, week)
+        min_value = get_min_max_value(min_max[0], year, week)['min']
+        max_value = get_min_max_value(min_max[0], year, week)['max']
+        txt_1 = f'По данным оперативного еженедельного мониторинга на {contacted_date} в {current_rg_ids} субъектах ' \
+                f'Российской Федерации\n в медицинские организации обратились {contacted_current} пострадавших от укусов ' \
+                f' клещей (в {previous_year} г. в {previous_rg_ids} субъекте, {contacted_previous} человека), ' \
+                f'в том числе {contacted_current_chl} детей.'
+        txt_2 = f'Обращаемость пострадавших от укусов клещей в сравнении с  среднемноголетним значением ' \
+                f'(СМП – {average_value}) {compare_value(contacted_current, average_value)}. ' \
+                f'Ежегодно в аналогичный период обращались в медицинские организации от {min_value} до {max_value} ' \
+                f'пострадавших от укусов клещей. За {week} неделю обратились в медицинские организации' \
+                f' {43724} пострадавших от укусов клещей.'
 
-        return render_template(f'ticks.html', title='Клещи', current_week=current_week, date_now=date_now)
+        # week_number = current_date.isocalendar()[1]
+
+        return render_template(f'ticks.html',
+                               title='Клещи',
+                               current_week=current_week,
+                               current_year=current_year,
+                               previous_year=previous_year,
+                               date_now=date_now,
+                               min_year=min_max[0],
+                               max_year=min_max[1],
+                               min_week=min_max[2],
+                               max_week=min_max[3],
+                               txt_1=txt_1
+
+                               )
     else:
-        return render_template(f'ticks.html', title='Клещи')
+        return render_template(f'ticks.html',
+                               title='Клещи',
+                               current_week=current_week,
+                               current_year=current_year,
+                               date_now=date_now,
+                               min_year=min_max[0],
+                               max_year=min_max[1],
+                               min_week=min_max[2],
+                               max_week=min_max[3],
+                               )
 
 
 @app.route('/tst', methods=['GET', 'POST'])
@@ -63,17 +111,44 @@ def tst():
         smp_rf = round(get_smp(2010, 2019, nz_id, 90), 2)
         ud = compare_value(rf_mrb, smp_rf)
         top_reg = get_top_5_regions(int(year), nz_id)
+        top_reg_list = []
+        for i in top_reg:
+            value_rg = i[1]
+            smp_rg = round(get_smp(2010, 2019, nz_id, i[0]), 2)
+            ud_rg = compare_value(value_rg, smp_rg)
+            print(f'{value_rg} * {smp_rg} / {ud_rg}')
+            top_reg_list.append((i[0], value_rg, smp_rg, ud_rg))
+
         down_reg = get_down_5_regions(int(year), nz_id)
         tu = get_tu_info()
         max_mrb = max(value)
         color_value = 198
 
-        return render_template(f'tst.html', title='Главная', nod=nz, form_2=form_2, color=color_value, max_mrb=max_mrb,
-                               current_year=current_year, min_year=min_year, max_year=max_year, name_nz=name_nz,
-                               smp_rf=smp_rf, rf_mrb=rf_mrb, ud=ud, top_reg=top_reg, tu=tu, down_reg=down_reg)
+        return render_template(f'tst.html',
+                               title='Главная',
+                               nod=nz,
+                               form_2=form_2,
+                               color=color_value,
+                               max_mrb=max_mrb,
+                               current_year=current_year,
+                               min_year=min_year,
+                               max_year=max_year,
+                               name_nz=name_nz,
+                               smp_rf=smp_rf,
+                               rf_mrb=rf_mrb,
+                               ud=ud,
+                               top_reg=top_reg,
+                               top_reg_list=top_reg_list,
+                               tu=tu,
+                               down_reg=down_reg)
     else:
-        return render_template(f'tst.html', title='Главная', nod=nz, current_year=current_year, min_year=min_year,
-                               max_year=max_year)
+        return render_template(f'tst.html',
+                               title='Главная',
+                               nod=nz,
+                               current_year=current_year,
+                               min_year=min_year,
+                               max_year=max_year
+                               )
 
 
 @app.route('/smp', methods=['GET', 'POST'])

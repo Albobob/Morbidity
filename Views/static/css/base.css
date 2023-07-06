@@ -9,6 +9,7 @@ body {
   padding: 5px;
   margin: 0 auto;
   background-color: #f6f6f8;
+  line-height:normal;
 }
 
 select{
@@ -43,3 +44,4 @@ align-items: center;
   display: flex;
   gap: 0 20px;
 }
+
