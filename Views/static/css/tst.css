@@ -1,0 +1,1095 @@
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.name_nz { grid-area: 1 / 1 / 2 / 10; }
+
+.input {
+        grid-area: 2 / 7 / 4 / 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;;
+        background: #eee;
+        }
+
+.map_wrapper {  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . Murmansk . . . . . . . . . . . . . . ."
+    ". . . Karelia . . . . . . Nenets . . . . . . Chukotka Kamchatka ."
+    ". . Len_obl Novgorod Vologda . . . Arkhangelsk Komi Yamal . . Krasnoyarsk . Yakutia Magadan . . ."
+    "Kaliningrad . Pskov Tver Yaroslavl Ivanovo Kostroma Mariel Kirov Perm Khanty Tyumen Tomsk Kemerovo Irkutsk Amur Khabarovsk Sakhalin . ."
+    ". . Smolensk Kaluga MO Vladimir Nizhny Chuvash Tatarstan Udmurtia Sverdlovsk Kurgan Novosibirsk Khakassia Buryatia Jewish . . . ."
+    ". . Brynsk Orel Tula Ryazan Mordovia Ulyanovsk Samara Bashkortostan Chelyabinsk Omsk Altai_K Tuva Transbaika . Primorsky . . ."
+    ". . . Kursk Lipetsk Tambov Penza Saratov Orenburg . . . Altai . . . . . . ."
+    ". . . . Belgorod Voronezh Volgograd . . . . . . . . . . . . ."
+    ". . Crimea Adygea Krasnodar Rostov Kalmykia Astrakhan . . . MSK . . . . . . . ."
+        ". . . . Karachayevo Stavropol Chechen Dagestan . . . SPB . . . . . . . ."
+    ". . . . Kabardino Ossetia Ingushetia . . . . Sevastopol . . . . . . . .";
+  grid-area: 2 / 1 / 10 / 7;
+}
+
+.text { grid-area: 7 / 5 / 10 / 10; }
+.text {display: grid;
+width: 40vw;
+/*border: 1px solid;*/
+
+}
+
+.top {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "up up down down";
+  grid-area: 4 / 7 / 7 / 10;
+/*   border: 1px solid;*/
+}
+
+.up {
+    grid-area: up;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.down {
+    grid-area: down;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+
+
+.down_txt{
+width: 15px;
+height: 15px;
+border-top: 5px solid #0081AF !important;
+border-right: 5px solid #0081AF !important;
+margin: 5px 0 0 5px;
+transform: rotate(135deg);
+display: inline-block;
+transition: 1s;
+
+    }
+.up_txt{
+width: 15px;
+height: 15px;
+border-top: 5px solid #BA2121 !important;
+border-right: 5px solid #BA2121 !important;
+margin: 5px 0 0 5px;
+transform: rotate(-45deg);
+display: inline-block;
+transition: 1s;
+ }
+
+select[name="nz_id"] {
+  width: 197px;
+}
+input[type='number']{
+    width: 190px;
+}
+input[type='submit']{
+    width: 197px;
+}
+
+.Sevastopol {
+    grid-area: Sevastopol;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Kaliningrad { 
+    grid-area: Kaliningrad;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.MSK {
+    grid-area: MSK;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.SPB { 
+    grid-area: SPB;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+.Pskov { 
+    grid-area: Pskov;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Len_obl { grid-area: Len_obl;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Novgorod { 
+    grid-area: Novgorod;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Vologda {
+  grid-area: Vologda;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  height: 55px;
+  width: 55px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.Karelia {
+ grid-area: Karelia;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  height: 55px;
+  width: 55px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Murmansk { 
+  grid-area: Murmansk;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  height: 55px;
+  width: 55px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Tver { 
+    grid-area: Tver;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Yaroslavl { 
+    grid-area: Yaroslavl;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ivanovo { 
+    grid-area: Ivanovo;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Kostroma {
+    grid-area: Kostroma;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Mariel {
+    grid-area: Mariel;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Arkhangelsk {
+    grid-area: Arkhangelsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Komi{
+    grid-area: Komi;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nenets{
+    grid-area: Nenets;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Kaluga {
+    grid-area: Kaluga;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Orel {
+    grid-area: Orel;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Kursk {
+    grid-area: Kursk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Brynsk {
+    grid-area: Brynsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Smolensk {
+    grid-area: Smolensk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.MO {
+    grid-area: MO;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tula {
+    grid-area: Tula;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Lipetsk {
+    grid-area: Lipetsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Belgorod {
+    grid-area: Belgorod;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Voronezh {
+    grid-area: Voronezh;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tambov {
+    grid-area: Tambov;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ryazan {
+    grid-area: Ryazan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Vladimir {
+    grid-area: Vladimir;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Adygea {
+    grid-area: Adygea;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Kalmykia {
+    grid-area: Kalmykia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Crimea {
+    grid-area: Crimea;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Krasnodar{
+    grid-area: Krasnodar;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Rostov{
+    grid-area: Rostov;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Astrakhan{
+    grid-area: Astrakhan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Volgograd{
+    grid-area: Volgograd;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Dagestan {
+    grid-area: Dagestan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Ingushetia{
+    grid-area: Ingushetia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Kabardino {
+    grid-area: Kabardino;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Karachayevo {
+    grid-area: Karachayevo;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ossetia {
+    grid-area: Ossetia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Chechen {
+    grid-area: Chechen;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Stavropol {
+    grid-area: Stavropol;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bashkortostan {
+    grid-area: Bashkortostan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Mordovia {
+    grid-area: Mordovia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Tatarstan {
+    grid-area: Tatarstan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Udmurtia {
+    grid-area: Udmurtia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Chuvash{
+    grid-area: Chuvash;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Perm{
+    grid-area: Perm;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Kirov{
+    grid-area: Kirov;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Nizhny {
+    grid-area: Nizhny;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Orenburg{
+    grid-area: Orenburg;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Penza{
+    grid-area: Penza;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Samara{
+    grid-area: Samara;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Saratov{
+    grid-area: Saratov;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Ulyanovsk{
+    grid-area: Ulyanovsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Kurgan{
+    grid-area: Kurgan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Chelyabinsk{
+    grid-area: Chelyabinsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sverdlovsk {
+    grid-area: Sverdlovsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tyumen {
+    grid-area: Tyumen;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Khanty {
+    grid-area: Khanty;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Yamal {
+    grid-area: Yamal;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Omsk{
+    grid-area: Omsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Altai_K {
+    grid-area: Altai_K;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Altai{
+    grid-area: Altai;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tuva{
+    grid-area: Tuva;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Khakassia{
+    grid-area: Khakassia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Krasnoyarsk{
+    grid-area: Krasnoyarsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Irkutsk{
+    grid-area: Irkutsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Kemerovo{
+    grid-area: Kemerovo;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Novosibirsk{
+    grid-area: Novosibirsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Tomsk{
+    grid-area: Tomsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Buryatia {
+    grid-area: Buryatia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Yakutia {
+    grid-area: Yakutia;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Kamchatka{
+    grid-area: Kamchatka;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Transbaika {
+    grid-area: Transbaika;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Primorsky{
+    grid-area: Primorsky;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Khabarovsk{
+    grid-area: Khabarovsk;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Amur{
+    grid-area: Amur;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+
+ }
+
+.Magadan{
+    grid-area: Magadan;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sakhalin{
+    grid-area: Sakhalin;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Jewish{
+    grid-area: Jewish;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+ }
+
+.Chukotka{
+    grid-area: Chukotka;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    height: 55px;
+    width: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+}
+.right {
+  grid-area: right;
+}
+.footer {
+  grid-area: footer;
+}
+
+
+
+
+.map_wrapper div:nth-child(1n+1) {
+  font-size: 12px;
+  border: 1px solid ;
+}
+
+.name {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    justify-self: start;
+    align-self: start;
+    padding: 0px 2px;
+}
+.value {
+    padding: 10px 0px 0px 0px;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: center;
+  align-self: center;
+  font-size: 13px;
+}
+
+
+p {
+    text-indent: 25px;
+    line-height: normal;
+    /*border: 1px solid green;*/
+    margin: 5px;
+}
+
+li {
+    line-height: normal; /* Межстрочное расстояние */
+}
+
+/*
+body {
+  line-height:normal;
+}*/

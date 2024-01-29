@@ -1,0 +1,51 @@
+{% extends  'base.html'%}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/smp.css') }}">
+{% endblock head %}
+
+{% block content %}
+
+<div class="wrapper">
+    <div class="info">
+        <form action="{{ url_for('smp') }}" method="POST">
+            <label for="date_first">Введите год:</label>
+            <!--            # TODO: Сделать что бы подсталялся максимальное и минимальне значение в год-->
+            <input type="number" min="2010" max="2010" step="1" name="date_first"
+                   value="{{ request.form['date_first'] }}"><br><br>
+            <label for="date_last">Введите год:</label>
+            <input type="number" min="2019" max="2019" step="1" name="date_last"
+                   value="{{ request.form['date_last'] }}"><br><br>
+
+            <select name="tu_id">
+                {% for region in regions %}
+                <option value="{{ region.id }}">{{ region.name_ru }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <select name="nz_id">
+                {% for nz_id, nz_name in nod %}
+                <option value="{{ nz_id }}">{{ nz_name }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+
+            <br><br>
+            <input type="submit" value="Ввести">
+        </form>
+
+
+        <h3>SMP = {{ value_smp }}</h3>
+
+    </div>
+</div>
+
+
+<br><br>
+
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,204 @@
+h3.district {
+  text-align: center;
+}
+.container {
+
+  line-height: 1; /* устанавливаем межстрочное расстояние равным высоте шрифта */
+  font-size: 13px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr 1fr 1fr 1fr 1fr); /* Изменяем количество строк на 3 */
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  width: 100hv;
+  height: 80vh; /* Устанавливаем высоту контейнера равной высоте окна браузера */
+  grid-template-areas:
+    "ЦФО СЗФО СКФО УФО ДФО"
+    "ЦФО СЗФО  ПФО  СФО ДФО"
+    "ЦФО ЮФО  ПФО  СФО ДФО"
+    "ЦФО ЮФО  ПФО  СФО ДФО"
+    "ЦФО ЮФО  ПФО  СФО ДФО";
+/*  justify-content: space-araund;*/
+/*  align-content: stretch;*/
+/*    border: 1px solid red;*/
+}
+.ЦФО {
+  display: grid; 
+  grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "ЦФО_dh ЦФО_dh ЦФО_dh"
+    "ЦФО_dn ЦФО_dn ЦФО_dv"
+    "ЦФО_dn ЦФО_dn ЦФО_dv"
+    "ЦФО_dn ЦФО_dn ЦФО_dv"; 
+  grid-area: ЦФО; 
+  border: 1px solid red;
+}
+.ЦФО_dh { grid-area: ЦФО_dh; 
+  border: 1px solid green;
+}
+.ЦФО_dn { grid-area: ЦФО_dn; 
+  border: 1px solid green;
+}
+.ЦФО_dv { grid-area: ЦФО_dv; 
+  border: 1px solid green;
+}
+.СЗФО {
+  display: grid; 
+  grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "СЗФО_dh СЗФО_dh СЗФО_dh"
+    "СЗФО_dn СЗФО_dn СЗФО_dv"
+    "СЗФО_dn СЗФО_dn СЗФО_dv"
+    "СЗФО_dn СЗФО_dn СЗФО_dv"; 
+  grid-area: СЗФО; 
+  border: 1px solid red;
+}
+.СЗФО_dh { grid-area: СЗФО_dh; 
+  border: 1px solid green;
+}
+.СЗФО_dn { grid-area: СЗФО_dn; 
+  border: 1px solid green;
+}
+.СЗФО_dv { grid-area: СЗФО_dv; 
+  border: 1px solid green;
+}
+.ЮФО {
+  display: grid; 
+  grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "ЮФО_dh ЮФО_dh ЮФО_dh"
+    "ЮФО_dn ЮФО_dn ЮФО_dv"
+    "ЮФО_dn ЮФО_dn ЮФО_dv"
+    "ЮФО_dn ЮФО_dn ЮФО_dv"; 
+  grid-area: ЮФО; 
+  border: 1px solid red;
+}
+.ЮФО_dh { grid-area: ЮФО_dh; 
+  border: 1px solid green;
+}
+.ЮФО_dn { grid-area: ЮФО_dn; 
+  border: 1px solid green;
+}
+.ЮФО_dv { grid-area: ЮФО_dv; 
+  border: 1px solid green;
+}
+.СКФО {
+  display: grid; 
+   grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "СКФО_Dh СКФО_Dh СКФО_Dh"
+    "СКФО_dn СКФО_dn СКФО_dv"
+    "СКФО_dn СКФО_dn СКФО_dv"
+    "СКФО_dn СКФО_dn СКФО_dv"; 
+  grid-area: СКФО; 
+  border: 1px solid red;
+}
+.СКФО_Dh { grid-area: СКФО_Dh; 
+   border: 1px solid green;
+ }
+.СКФО_dn { grid-area: СКФО_dn; 
+   border: 1px solid green;
+ }
+.СКФО_dv { grid-area: СКФО_dv; 
+   border: 1px solid green;
+ }
+
+
+.ПФО {
+  display: grid; 
+    grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "ПФО_dh ПФО_dh ПФО_dh"
+    "ПФО_dn ПФО_dn ПФО_dv"
+    "ПФО_dn ПФО_dn ПФО_dv"
+    "ПФО_dn ПФО_dn ПФО_dv"; 
+  grid-area: ПФО; 
+  border: 1px solid red;
+}
+.ПФО_dh { grid-area: ПФО_dh; 
+   border: 1px solid green;
+ }
+.ПФО_dn { grid-area: ПФО_dn; 
+   border: 1px solid green;
+ }
+.ПФО_dv { grid-area: ПФО_dv; 
+   border: 1px solid green;
+ }
+.УФО {
+  display: grid; 
+   grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "УФО_dh УФО_dh УФО_dh"
+    "УФО_dn УФО_dn УФО_dv"
+    "УФО_dn УФО_dn УФО_dv"
+    "УФО_dn УФО_dn УФО_dv"; 
+  grid-area: УФО; 
+  border: 1px solid red;
+}
+.УФО_dh { grid-area: УФО_dh; 
+   border: 1px solid green;
+ }
+.УФО_dn { grid-area: УФО_dn; 
+   border: 1px solid green;
+ }
+.УФО_dv { grid-area: УФО_dv; 
+   border: 1px solid green;
+ }
+.СФО {
+  display: grid; 
+    grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "СФО_dh СФО_dh СФО_dh"
+    "СФО_dn СФО_dn СФО_dv"
+    "СФО_dn СФО_dn СФО_dv"
+    "СФО_dn СФО_dn СФО_dv"; 
+  grid-area: СФО; 
+  border: 1px solid red;
+}
+.СФО_dh { grid-area: СФО_dh; 
+  border: 1px solid green;
+}
+.СФО_dn { grid-area: СФО_dn; 
+  border: 1px solid green;
+}
+.СФО_dv { grid-area: СФО_dv; 
+  border: 1px solid green;
+}
+.ДФО {
+  display: grid; 
+  grid-template-columns: 1fr 1.8fr 0.2fr; 
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "ДФО_dh ДФО_dh ДФО_dh"
+    "ДФО_dn ДФО_dn ДФО_dv"
+    "ДФО_dn ДФО_dn ДФО_dv"; 
+  grid-area: ДФО; 
+  border: 1px solid red;
+}
+.ДФО_dh { 
+  grid-area: ДФО_dh; 
+  border: 1px solid green;
+}
+.ДФО_dn { 
+  grid-area: ДФО_dn; 
+  border: 1px solid green;
+}
+.ДФО_dv { 
+  grid-area: ДФО_dv; 
+  border: 1px solid green;
+}

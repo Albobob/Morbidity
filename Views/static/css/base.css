@@ -1,0 +1,47 @@
+html{
+  box-sizing: border-box;
+}
+
+body {
+ /* font: normal 16px/100% "Andale Mono", AndaleMono, monospace;*/
+  font: normal 16px/100% "Arial";
+  color: #black;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #f6f6f8;
+  line-height:normal;
+}
+
+select{
+  width: 200px;
+}
+
+
+a {
+  color: black;
+}
+
+li{
+  list-style: none;
+}
+
+.header{
+border-bottom: 1px solid black;
+}
+
+.header_content{
+  max-width: 1220px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+}
+.nav{
+display: flex;
+justify-content: spaces-between;
+align-items: center;
+}
+.menu{
+  display: flex;
+  gap: 0 20px;
+}
+

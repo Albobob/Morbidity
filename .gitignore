@@ -116,7 +116,7 @@ venv.bak/
 
 # Rope project settings
 .ropeproject
-
+database.db
 # mkdocs documentation
 /site
 
@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea/
+*.xlsx
+*.xls
+*.xlsm
